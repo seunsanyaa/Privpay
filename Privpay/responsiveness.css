@@ -1,0 +1,115 @@
+body, header{
+    max-width: 1440px;
+    margin: auto;
+}
+
+@media (min-width: 200px) and (max-width: 320px) {
+    .spacing{
+        padding: 40px 20px;
+    }
+    .spacing-2{
+        padding: 120px 10px;
+    }
+    .spacing-3{
+        padding: 50px 10px;
+    }
+    .full-width{
+        width: 100%;
+    }
+    .start-img{
+        margin: 0 auto;
+        width: 300px;
+    }
+    .none{
+        display: none;
+    }
+    .te-xt{
+        text-align: left !important;
+        margin-left: 20px !important;
+    }
+    .client-feedback-content .feedback-card{
+        height: 450px;
+    }
+    .owl-dots{
+        display: none !important;
+    }
+    .header-area{
+        padding: 10px;
+    }
+}
+@media (min-width: 321px) and (max-width: 500px) {
+    .spacing{
+        padding: 40px 20px;
+    }
+    .spacing-2{
+        padding: 120px 10px;
+    }
+    .spacing-3{
+        padding: 50px 10px;
+    }
+    .full-width{
+        width: 100%;
+    }
+    .start-img{
+        margin: 0 auto;
+        width: 400px;
+    }
+    .none{
+        display: none;
+    }
+    .te-xt{
+        text-align: left !important;
+        margin-left: 20px !important;
+    }
+    .client-feedback-content .feedback-card{
+        height: 450px;
+    }
+    .owl-dots{
+        display: none !important;
+    }
+    .header-area{
+        padding: 10px;
+    }
+}
+@media (min-width: 501px) and (max-width: 1000px) {
+    .spacing{
+        padding: 40px 20px;
+    }
+    .spacing-2{
+        padding: 120px 10px;
+    }
+    .spacing-3{
+        padding: 50px 10px;
+    }
+    .start-img{
+        margin: 0 auto;
+        width: 900px;
+    }
+    .none{
+        display: none;
+    }
+    .te-xt{
+        text-align: left !important;
+        margin-left: 20px !important;
+    }
+    .client-feedback-content .feedback-card{
+        height: 450px;
+    }
+    .client-feedback-area .owl-stage-outer{
+        right: 0px !important;
+    }
+    .owl-dots{
+        display: none !important;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1024px) {
+    .client-feedback-area .owl-stage-outer{
+        right: 0px !important;
+    }
+    .none{
+        display: none;
+    }
+    .spacing-3{
+        padding: 50px 10px;
+    }
+}
