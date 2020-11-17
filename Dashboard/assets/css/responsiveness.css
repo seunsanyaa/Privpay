@@ -14,3 +14,8 @@ body, header{
         max-width: 280px;
     }
 }
+@media (min-width: 1000px) and (max-width: 1440px) {
+    .space-jor{
+        margin: 20px;
+    }
+}
