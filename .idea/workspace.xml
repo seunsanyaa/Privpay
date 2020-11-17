@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dashboard/assets/css/responsiveness.css" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/assets/css/responsiveness.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dashboard/crypto/crypto-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/crypto/crypto-index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,7 @@
       <updated>1605438646689</updated>
       <workItem from="1605438648253" duration="2296000" />
       <workItem from="1605441223650" duration="8839000" />
-      <workItem from="1605619682020" duration="1896000" />
+      <workItem from="1605619682020" duration="3478000" />
     </task>
     <servers />
   </component>
