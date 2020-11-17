@@ -1,0 +1,16 @@
+body, header{
+    max-width: 1440px;
+    margin: auto;
+}
+
+@media (min-width: 200px) and (max-width: 320px) {
+    .eop{
+        max-width: 220px;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 500px) {
+    .eop{
+        max-width: 280px;
+    }
+}
