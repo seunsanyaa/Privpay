@@ -6,12 +6,15 @@ body, header{
 @media (min-width: 200px) and (max-width: 320px) {
     .eop{
         max-width: 220px;
+        overflow: hidden;
+
     }
 }
 
 @media (min-width: 321px) and (max-width: 500px) {
     .eop{
         max-width: 280px;
+        overflow: hidden;
     }
 }
 @media (min-width: 1000px) and (max-width: 1440px) {

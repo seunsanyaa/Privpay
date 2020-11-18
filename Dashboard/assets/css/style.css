@@ -698,6 +698,8 @@ hr {
 
 .page-wrapper {
   padding-top: 70px;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .page-content {
@@ -9091,3 +9093,4 @@ hr.thick {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
