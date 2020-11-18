@@ -7,7 +7,6 @@ body, header{
     .eop{
         max-width: 220px;
         overflow: hidden;
-
     }
 }
 
@@ -19,6 +18,9 @@ body, header{
 }
 @media (min-width: 1000px) and (max-width: 1440px) {
     .space-jor{
-        margin: 21px;
+        margin: 22px;
+    }
+    .card-h{
+        height: 120px;
     }
 }
