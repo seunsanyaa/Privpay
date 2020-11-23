@@ -60,15 +60,15 @@ Last Updated: Oct 7, 2020
 ---------------------------------------------------------- */
 /* Import Fonts & All CSS Files */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap");
-@import url(css/bootstrap.min.css);
-@import url(css/default/classy-nav.min.css);
-@import url(css/animate.css);
-@import url(css/owl.carousel.min.css);
-@import url(css/magnific-popup.css);
-@import url(css/jquery.animatedheadline.css);
-@import url(css/default/lineicons.min.css);
-@import url(css/font-awesome.min.css);
-@import url(css/flag-icon.min.css);
+@import url(/assets/css/bootstrap.min.css);
+@import url(/assets/css/default/classy-nav.min.css);
+@import url(/assets/css/animate.css);
+@import url(/assets/css/owl.carousel.min.css);
+@import url(/assets/css/magnific-popup.css);
+@import url(/assets/css/jquery.animatedheadline.css);
+@import url(/assets/css/default/lineicons.min.css);
+@import url(/assets/css/font-awesome.min.css);
+@import url(/assets/css/flag-icon.min.css);
 /* Reboot CSS */
 * {
   margin: 0;
