@@ -16,6 +16,26 @@ app.get('/login', (req, res) => {
     res.render('pages/login');
 });
 
+app.get('/signup', (req, res) => {
+    res.render('pages/signup');
+});
+
+app.get('/forget', (req, res) => {
+    res.render('pages/forget');
+});
+
+app.get('/bvn', (req, res) => {
+    res.render('pages/bvn');
+});
+
+app.get('/authcode', (req, res) => {
+    res.render('pages/authcode');
+});
+
+app.get('/mailconfirm', (req, res) => {
+    res.render('pages/mailconfirm');
+});
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
