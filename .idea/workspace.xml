@@ -20,17 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/crypto/crypto-exchange.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/crypto/crypto-exchange.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/crypto/crypto-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/crypto/crypto-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/crypto/crypto-settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/crypto/crypto-settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dashboard/crypto/crypto-wallet.html" beforeDir="false" afterPath="$PROJECT_DIR$/Dashboard/crypto/crypto-wallet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Privpay/Authcode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Privpay/Authcode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Privpay/Bvn.html" beforeDir="false" afterPath="$PROJECT_DIR$/Privpay/Bvn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Privpay/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Privpay/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Privpay/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Privpay/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Privpay/mailconfirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/Privpay/mailconfirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Privpay/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/Privpay/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
