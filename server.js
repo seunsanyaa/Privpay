@@ -16,6 +16,7 @@ app.get('/login', (req, res) => {
     res.render('pages/login');
 });
 
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
