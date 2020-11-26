@@ -20,32 +20,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/layouts/footer2.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DB.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/npm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/Dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_11_2020_11_13_PM_[Default_Changelist]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_11_2020_11_13_PM__Default_Changelist_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/authcode.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/authcode.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/bvn.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/bvn.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/forget.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/forget.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pages/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/login.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/mailconfirm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/mailconfirm.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/signup.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kK9vFZJHYqppTfEYQvjuw1UWIp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -79,6 +95,8 @@
       <workItem from="1605679079982" duration="1523000" />
       <workItem from="1605716636700" duration="2621000" />
       <workItem from="1606027620550" duration="3657000" />
+      <workItem from="1606311775062" duration="15334000" />
+      <workItem from="1606416232126" duration="5063000" />
     </task>
     <servers />
   </component>
@@ -97,22 +115,37 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="121" y="50" key="MergeDialog" timestamp="1605647654636">
+    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606421545034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="121" y="50" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1605647654636" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1605726213357">
+    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1606421545034" />
+    <state x="121" y="50" key="MergeDialog" timestamp="1606153845689">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605726213357" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605801664792">
+    <state x="121" y="50" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606153845689" />
+    <state x="280" y="102" key="MultipleFileMergeDialog" timestamp="1606153845698">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1605801664792" />
+    <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606153845698" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606153809497">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606153809497" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606153890533">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606153890533" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1606031457142">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1606031457142" />
+    <state x="363" y="253" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606416628375">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="363" y="253" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1280.680@0.0.1280.680" timestamp="1606416628375" />
   </component>
 </project>
