@@ -20,22 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/DB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/npm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/Dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_11_2020_11_13_PM_[Default_Changelist]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_11_2020_11_13_PM__Default_Changelist_1.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/{" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/database.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/signup.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +91,9 @@
       <workItem from="1605716636700" duration="2621000" />
       <workItem from="1606027620550" duration="3657000" />
       <workItem from="1606311775062" duration="15334000" />
-      <workItem from="1606416232126" duration="5063000" />
+      <workItem from="1606416232126" duration="12359000" />
+      <workItem from="1606660337464" duration="1065000" />
+      <workItem from="1606663193301" duration="42836000" />
     </task>
     <servers />
   </component>
@@ -119,10 +116,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606421545034">
+    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606421928632">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1606421545034" />
+    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1606421928632" />
     <state x="121" y="50" key="MergeDialog" timestamp="1606153845689">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -131,10 +128,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606153845698" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606153809497">
+    <state x="449" y="43" key="RollbackChangesDialog" timestamp="1606769479722">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606153809497" />
+    <state x="449" y="43" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1606769479722" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606421901977">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606421901977" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606153890533">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
