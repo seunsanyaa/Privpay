@@ -30,7 +30,7 @@ exports.mailConfirm=('/verify', (req, res) => {
     res.render('pages/mailconfirm');
 });
 
-exports.get404 = ('/page-Not-Found',(req, res, next) => {
+exports.get404 = ('/Page-Not-Found',(req, res, next) => {
     res.status(404).render('pages/404');
 });
 
