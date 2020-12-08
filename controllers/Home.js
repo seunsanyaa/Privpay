@@ -1,20 +1,16 @@
-
-
-
-exports.homePage=('/', (req, res,next) => {
+exports.homePage=('/', (req, res) => {
     res.render('pages/index');
 });
 
-
-exports.login=('/login', (req, res,next) => {
+exports.login=('/login', (req, res) => {
     res.render('pages/login');
 });
 
-exports.signUp=('/signup', (req, res,next) => {
+exports.signUp=('/signup', (req, res) => {
     res.render('pages/signup');
 });
 
-exports.forget=('/forget', (req, res,next) => {
+exports.forget=('/forget', (req, res) => {
     res.render('pages/forget');
 });
 
@@ -22,7 +18,7 @@ exports.bvn=('/Bank-Verification', (req, res, next) => {
     res.render('pages/bvn');
 });
 
-exports.authCode=('/authenticate', (req, res,next) => {
+exports.authCode=('/authenticate', (req, res) => {
     res.render('pages/authcode');
 });
 
