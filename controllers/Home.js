@@ -30,11 +30,9 @@ exports.mailConfirm=('/Verify', (req, res,next) => {
     res.render('pages/mailconfirm');
 });
 
-<<<<<<< HEAD
+
 exports.get404 = ('/Page-Not-Found',(req, res, next) => {
-=======
-exports.get404 = ('/Page-Not-Found',(req, res) => {
->>>>>>> parent of 9344b70... Merge remote-tracking branch 'origin/main' into main
+
     res.status(404).render('pages/404');
 });
 
