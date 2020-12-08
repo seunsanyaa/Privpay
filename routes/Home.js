@@ -11,6 +11,7 @@ const { body, validationResult } = require('express-validator');
 
 const router = express.Router();
 
+
 router.use(express.json)
 
 
@@ -80,7 +81,9 @@ router.get('/authenticate', homeController.authCode);
 router.get('/forget', homeController.forget);
 
 router.get('/verify', homeController.mailConfirm);
-router.get('/Page-Not-Found', homeController.get404)
+
+
+
 
 
 module.exports = router;
