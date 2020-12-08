@@ -1,17 +1,35 @@
-// const mongodb= require('mongodb');
-// const MongoClient = mongodb.MongoClient;
+const mongodb= require('mongodb');
+const mongoose = require("mongoose");
+const MongoClient = mongodb.MongoClient;
+
+function mongoConnect(){
+
+
+mongoose.connect('mongodb+srv://Enemy:xpNvrwRkdkF1tz5n@privpay.ffr52.mongodb.net/privpay_users?retryWrites=true&w=majority')
+    .then(client => {
+        console.log('Connected!');
+
+
+    }).catch(err => {
+        console.log(err);
+});
+};
+
+module.exports=mongoConnect;
+
+// const mongoose = require("mongoose");
+// const MONGOURI = "mongodb+srv://Enemy:nRDtaPio9RnntdUj@privpay.ffr52.mongodb.net/Privpay?retryWrites=true&w=majority";
 //
-// const mongoConnect =(callback)=>{
-//
-//
-// MongoClient.connect('mongodb+srv://Enemy:nRDtaPio9RnntdUj@privpay.ffr52.mongodb.net/Privpay?retryWrites=true&w=majority')
-//     .then(client => {
-//         console.log('Connected!');
-//         callback(client);
-//
-//     }).catch(err => {
-//         console.log(err);
-// });
+// const mongoConnect = async () => {
+//     try {
+//         await mongoose.connect(MONGOURI, {
+//             useNewUrlParser: true
+//         });
+//         console.log("Connected to DB !!");
+//     } catch (e) {
+//         console.log(e);
+//         throw e;
+//     }
 // };
 //
-// module.exports=mongoConnect;
+// module.exports = mongoConnect();
