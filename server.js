@@ -36,8 +36,6 @@ app.use(homeRoutes);
 //
 
 
-
-//
-// app.listen(port, () => {
-//     console.log(`Example app listening at http://localhost:${port}`)
-// })
+app.listen(port, () => {
+    console.log(`Web App Running At http://localhost:${port}`)
+})
