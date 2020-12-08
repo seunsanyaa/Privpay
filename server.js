@@ -28,8 +28,10 @@ app.get("/", (req, res) => {
 
 
 const homeRoutes = require('./routes/Home');
+const dashRoutes = require('./routes/Dashboard');
+app.use(homeRoutes);
+app.use(dashRoutes);
 
-app.use(homeRoutes)
 
 
 
