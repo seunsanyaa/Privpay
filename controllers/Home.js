@@ -18,7 +18,7 @@ exports.forget=('/forget', (req, res,next) => {
     res.render('pages/forget');
 });
 
-exports.bvn=('/bank-verification', (req, res) => {
+exports.bvn=('/Bank-Verification', (req, res, next) => {
     res.render('pages/bvn');
 });
 
@@ -26,11 +26,11 @@ exports.authCode=('/authenticate', (req, res,next) => {
     res.render('pages/authcode');
 });
 
-exports.mailConfirm=('/verify', (req, res) => {
+exports.mailConfirm=('/Verify', (req, res,next) => {
     res.render('pages/mailconfirm');
 });
 
-exports.get404 = ('/page-Not-Found',(req, res, next) => {
+exports.get404 = ('/Page-Not-Found',(req, res) => {
     res.status(404).render('pages/404');
 });
 
