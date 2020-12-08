@@ -78,13 +78,16 @@ router.get('/Bank-Verification', homeController.bvn);
 
 router.get('/Authenticate', homeController.authCode);
 
-
+<<<<<<< HEAD
 router.get('/verify', homeController.mailConfirm);
 router.get('/Page-Not-Found', homeController.get404)
-
+=======
 router.get('/forget', homeController.forget);
 
+router.get('/Verify', homeController.mailConfirm);
 
+
+>>>>>>> parent of 9344b70... Merge remote-tracking branch 'origin/main' into main
 
 
 module.exports = router;
