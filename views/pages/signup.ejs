@@ -45,14 +45,14 @@
                       <div class="register-form my-5">
                         <form action="/signup" method="post">
                           <div class="form-group mb-3">
-                            <input class="form-control rounded-0" type="email" placeholder="Email Address" required>
+                            <input class="form-control rounded-0" name="email" type="email" placeholder="Email Address" required>
                           </div>
                           <div class="form-group mb-3">
-                            <input class="form-control rounded-0" type="text" placeholder="Full Name" required>
+                            <input class="form-control rounded-0" name="name" type="text" placeholder="Full Name" required>
                           </div>
                           <div class="form-group mb-3">
                             <label class="label-psswd" for="registerPassword"><span class="hide" align="center" style="font-family: eina">HIDE</span><span class="show" align="center" style="font-family: eina">SHOW</span></label>
-                            <input class="input-psswd form-control rounded-0" id="registerPassword" type="password" placeholder="Password" psswd-shown="false" required>
+                            <input class="input-psswd form-control rounded-0" id="registerPassword" name="password" type="password" placeholder="Password" psswd-shown="false" required>
                           </div>
                           <button class="btn btn-primary white-btn w-100" type="submit" align="center" style="font-family: eina">Register Now</button>
                         </form>

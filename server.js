@@ -18,10 +18,11 @@ app.set('view engine', 'ejs');
 
 // // to use assets
 app.use(express.static('public'));
-// app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //
 // app.get("/", (req, res) => {
 //     res.json({ message: "API Working" });

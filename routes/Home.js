@@ -23,6 +23,7 @@ router.get('/login', homeController.login);
 
 router.post(
     "/login",
+
     [
         check("email", "Please enter a valid email").isEmail(),
         check("password", "Please enter a valid password").isLength({
@@ -96,11 +97,11 @@ router.get('/signup', homeController.signUp);
 
 router.post(
     "/signup",
+
     [
-        check("name", "Please Enter Your Full Name")
-            .not()
-            .isEmpty(),
+
         check("email", "Please enter a valid email").isEmail(),
+        check("name", "Please Enter Your Full Name").not().isEmpty(),
         check("password", "Please enter a valid password").isLength({
             min: 7
         })
@@ -114,8 +115,8 @@ router.post(
         }
 
         const {
-            name,
             email,
+            name,
             password
         } = req.body;
         try {
@@ -129,8 +130,8 @@ router.post(
             }
 
             user = new User({
-                name,
                 email,
+                name,
                 password
             });
 
