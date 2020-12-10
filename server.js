@@ -2,8 +2,8 @@
 const express = require('express');
 
 const app = express();
-const bodyParser= require('body-parser');
-const axios= require('axios');
+// const bodyParser= require('body-parser');
+// const axios= require('axios');
 const port = 3000
 const mongoConnect= require('./util/database');
 
