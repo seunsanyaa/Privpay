@@ -4,7 +4,7 @@ const flash = require('connect-flash');
 const { check, validationResult} = require("express-validator/check");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
+const mailchimpClient = require("@mailchimp/mailchimp_transactional")("Dr5f1iglJGGZUZQUHEDEdQ");
 const homeController = require('../controllers/Home');
 
 //for sessions in the dashboard
@@ -151,7 +151,7 @@ router.post(
                 email,
                 name,
                 password,
-                emailToken:crypto.randomBytes(64).toString('hex'),
+                emailToken: crypto.randomBytes(64).toString('hex'),
                 isVerified:false
             });
 
@@ -173,36 +173,47 @@ router.post(
                 },
                 async (err, token) => {
                     if (err) throw err;
-                    // res.redirect('/verify',);
-                    const msg={
+                    res.redirect('/verify',);
+//                     const msg={
+//
+//                         from:'noreply@email.com',
+//                         to: user.email,
+//                         subject:'Privpay - verify your email',
+//                         text:'Hello, thanks for registering on Privpay.' +
+//                             ' Please copy and paste the address below to verify your account.' +
+//                             ' http://' +req.headers.host + '/verify-email?token='+user.emailToken,
+//
+//                         html:'<h1> Hello, </h1>' +
+//                             '<p> thanks for registering on Privpay.</p>' +
+//                             '<p>Please click on the link below to verify your account.</p>'  +
+//                             '<a href="http://${req.headers.host}/verify-email?token=${user.emailToken}"> Verify your account </a>'
+//
+//
+//
+//                     }
+//
+//
+// try {
+//     await mailchimpClient.senders.verifyDomain(msg);
+//     req.flash('message','Thanks for registering')
+//     res.redirect('/login')
+// }
+// catch (error) {
+//     console.error(error);
+//     req.flash('message','error something went wrong')
+//     res.redirect('/signup')
+//     // expected output: ReferenceError: nonExistentFunction is not defined
+//     // Note - error messages will vary depending on browser
+// }
 
-                        from:'noreply@email.com',
-                        to: user.email,
-                        subject:'Privpay - verify your email',
-                        text:'Hello, thanks for registering on Privpay.' +
-                            ' Please copy and paste the address below to verify your account.' +
-                            ' http://' +req.headers.host + '/verify-email?token='+user.emailToken,
 
-                        html:'<h1> Hello, </h1>' +
-                            '<p> thanks for registering on Privpay.</p>' +
-                            '<p>Please click on the link below to verify your account.</p>'  +
-                            '<a href="http://${req.headers.host}/verify-email?token=${user.emailToken}"> Verify your account </a>'
+                });
+        }
 
-
-
-                    }
-
-                    try {
-                        await
-                    }
-
-                }
-
-
-
-            );
-        } catch (err) {
+        catch (err) {
             console.log(err.message);
+            req.flash('message','error something went wrong');
+            res.redirect('/signup')
             // res.status(500).send("Error in Saving");
         }
     }
@@ -225,7 +236,31 @@ router.get('/forget', homeController.forget);
 
 router.get('/Verify', homeController.mailConfirm);
 
+router.get('/verify-email', async (req ,res,next)=>{
+    try {
+        const user=await User.findOne({emailToken:req.query.token});
+        if (!user){
+            req.flash('message','Token is invalid, contact us for assistance');
+            return res.redirect('/')
+        }
+        user.emailToken=null;
+        user.isVerified=true;
+        await user.save();
+        await req.login(user,async (err)=>{
+            if (err) return next (err);
+            req.flash('message', 'Welcome to Privpay ${user.name}');
+            const redirectUrl=req.session.redirectTo || '/';
+            delete req.session.redirectTo;
+            res.redirect(redirectUrl);
+        })
+    }catch (error) {
+        console.log(error);
+        req.flash('message','something went wrong');
+        res.redirect()
+    }
 
+
+} )
 
 
 

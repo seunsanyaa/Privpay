@@ -32,6 +32,7 @@
     "object-hash": "^2.0.3",
     "path": "^0.12.7",
     "req-flash": "^0.0.3",
+    "twilio": "^3.54.0",
     "uglify-js": "^3.12.0",
     "winston": "^3.3.3",
     "winston-mongodb": "^5.0.5"
