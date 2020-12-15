@@ -27,10 +27,11 @@
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/login.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/signup.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +48,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1kK9vFZJHYqppTfEYQvjuw1UWIp" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -60,6 +67,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.1.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.12" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/views/layouts" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -68,6 +77,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -92,6 +102,9 @@
       <workItem from="1606027620550" duration="3657000" />
       <workItem from="1606311775062" duration="15334000" />
       <workItem from="1606416232126" duration="5063000" />
+      <workItem from="1607535342578" duration="46508000" />
+      <workItem from="1607868278998" duration="1291000" />
+      <workItem from="1607871254774" duration="6328000" />
     </task>
     <servers />
   </component>
@@ -103,7 +116,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -114,6 +139,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="515" y="154" key="#Language_Injections" timestamp="1607783192609">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="515" y="154" key="#Language_Injections/0.0.1280.680@0.0.1280.680" timestamp="1607783192609" />
     <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606421545034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -126,10 +155,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606153845698" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606153809497">
+    <state x="130" y="0" key="SettingsEditor" timestamp="1607784654792">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606153809497" />
+    <state x="130" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607784654792" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1607785553522">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1607785553522" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606153890533">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

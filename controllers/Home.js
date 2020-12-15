@@ -12,7 +12,7 @@ exports.login=('/login', (req, res) => {
 });
 
 exports.signUp=('/signup', (req, res) => {
-    res.render('pages/signup');
+    res.render('pages/signup',{message: req.flash('message')});
 });
 
 exports.forget=('/forget', (req, res) => {
@@ -20,7 +20,7 @@ exports.forget=('/forget', (req, res) => {
 });
 
 
-exports.bvn=('/Bank-Verification', (req, res) => {
+exports.bvn=('/bank-verification', (req, res) => {
 
     res.render('pages/bvn');
 });
@@ -32,7 +32,7 @@ exports.authCode=('/authenticate', (req, res) => {
 
 
 
-exports.mailConfirm=('/Verify', (req, res) => {
+exports.mailConfirm=('/verify', (req, res) => {
     res.render('pages/mailconfirm');
 });
 
