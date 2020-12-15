@@ -6,7 +6,10 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const mailchimpClient = require("@mailchimp/mailchimp_transactional")("Dr5f1iglJGGZUZQUHEDEdQ");
 const homeController = require('../controllers/Home');
-
+const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
+const authToken = 'c586aef6d9838bf26d9c453eba92b449';
+const twilioClient = require("twilio")(accountSid, authToken);
+const verificationSID= 'VA2a8112631ea0d0d5557d8b36a8e4b15a';
 //for sessions in the dashboard
 // const isAuth = require('../middleware/is-auth');
 
@@ -121,7 +124,7 @@ router.post(
             min: 8
         })
     ],
-    async (req, res) => {
+     myUser= async  (req, res,next) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
@@ -135,6 +138,7 @@ router.post(
             name,
             password
         } = req.body;
+
         try {
             let user = await User.findOne({
                 email
@@ -151,7 +155,7 @@ router.post(
                 email,
                 name,
                 password,
-                emailToken: crypto.randomBytes(64).toString('hex'),
+
                 isVerified:false
             });
 
@@ -173,38 +177,25 @@ router.post(
                 },
                 async (err, token) => {
                     if (err) throw err;
-                    res.redirect('/verify',);
-//                     const msg={
-//
-//                         from:'noreply@email.com',
-//                         to: user.email,
-//                         subject:'Privpay - verify your email',
-//                         text:'Hello, thanks for registering on Privpay.' +
-//                             ' Please copy and paste the address below to verify your account.' +
-//                             ' http://' +req.headers.host + '/verify-email?token='+user.emailToken,
-//
-//                         html:'<h1> Hello, </h1>' +
-//                             '<p> thanks for registering on Privpay.</p>' +
-//                             '<p>Please click on the link below to verify your account.</p>'  +
-//                             '<a href="http://${req.headers.host}/verify-email?token=${user.emailToken}"> Verify your account </a>'
-//
-//
-//
-//                     }
-//
-//
-// try {
-//     await mailchimpClient.senders.verifyDomain(msg);
-//     req.flash('message','Thanks for registering')
-//     res.redirect('/login')
-// }
-// catch (error) {
-//     console.error(error);
-//     req.flash('message','error something went wrong')
-//     res.redirect('/signup')
-//     // expected output: ReferenceError: nonExistentFunction is not defined
-//     // Note - error messages will vary depending on browser
-// }
+
+                    twilioClient.verify
+                        .services(verificationSID)
+                        .verifications.create({ to: email, channel: "email" })
+                        .then(verification => {
+                            console.log("Verification email sent");
+
+                            res.redirect(`/verify?email=${email}`);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                            req.flash('message', 'Something went wrong');
+                            res.redirect('/signup');
+
+                        });
+
+
+
+
 
 
                 });
@@ -216,7 +207,9 @@ router.post(
             res.redirect('/signup')
             // res.status(500).send("Error in Saving");
         }
+         module.exports.myUser = myUser;
     }
+
 )
 
 
@@ -234,33 +227,41 @@ router.get('/Authenticate', homeController.authCode);
 router.get('/forget', homeController.forget);
 
 
-router.get('/Verify', homeController.mailConfirm);
+router.get('/verify', homeController.mailConfirm);
 
-router.get('/verify-email', async (req ,res,next)=>{
-    try {
-        const user=await User.findOne({emailToken:req.query.token});
-        if (!user){
-            req.flash('message','Token is invalid, contact us for assistance');
-            return res.redirect('/')
-        }
-        user.emailToken=null;
-        user.isVerified=true;
-        await user.save();
-        await req.login(user,async (err)=>{
-            if (err) return next (err);
-            req.flash('message', 'Welcome to Privpay ${user.name}');
-            const redirectUrl=req.session.redirectTo || '/';
-            delete req.session.redirectTo;
-            res.redirect(redirectUrl);
+router.post("/verify", (req, res) => {
+    const userCode = req.body.code;
+  const email =  req.body.email;
+
+
+    console.log(`Code: ${userCode}`);
+    console.log(`Email: ${email}`);
+
+    //CHECK YOUR VERIFICATION CODE HERE
+
+    twilioClient.verify
+        .services('VA2a8112631ea0d0d5557d8b36a8e4b15a')
+        .verificationChecks.create({ to: email, code: userCode })
+        .then(verification_check => {
+            if (verification_check.status === "approved") {
+                User.isVerified=true;
+
+                res.redirect("/");
+            } else {
+
+                req.flash('message','Please enter the correct code from your mail');
+                res.redirect(`/verify?email=`+email);
+
+            }
         })
-    }catch (error) {
-        console.log(error);
-        req.flash('message','something went wrong');
-        res.redirect()
-    }
+        .catch(error => {
 
+            console.log(error);
+            req.flash('message','Please enter the correct code from your mail');
+            res.redirect(`/verify?email=`+email);
+        });
+});
 
-} )
 
 
 

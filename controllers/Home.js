@@ -33,7 +33,11 @@ exports.authCode=('/authenticate', (req, res) => {
 
 
 exports.mailConfirm=('/verify', (req, res) => {
-    res.render('pages/mailconfirm');
+    res.render('pages/mailconfirm',
+        {
+            message: req.flash('message'),
+
+        });
 });
 
 

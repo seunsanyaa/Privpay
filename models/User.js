@@ -12,9 +12,7 @@ const userSchema = new  Schema({
         required:true
     },
 
-    emailToken:{
-        type:String
-    },
+
     isVerified:{
         type:Boolean
     },
