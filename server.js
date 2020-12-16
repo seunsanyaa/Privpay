@@ -11,16 +11,32 @@ const expressValidator = require('express-validator');
 const session = require('express-session');
 const flash = require('connect-flash');
 const axios= require('axios');
-const mailchimpClient = require("@mailchimp/mailchimp_transactional")("Dr5f1iglJGGZUZQUHEDEdQ");
 const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
 const authToken = 'c586aef6d9838bf26d9c453eba92b449';
 const twilioClient = require("twilio")(accountSid, authToken);
 
 global.crypto = require('crypto')
-const port = 3000
+
 const mongoConnect= require('./util/database');
 
 mongoConnect()
+
+
+
+
+const two_hours = 1000*60*60*2;
+
+
+const {
+    port = 3000,
+    NODE_ENV= 'development',
+    SESS_NAME= 'sid',
+    SESS_SECRET='keyboard cat',
+    SESS_LIFETIME= two_hours
+}=process.env
+
+const IN_PROD = NODE_ENV === 'production'
+
 
 const app = express();
 
@@ -36,15 +52,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-
-
-
 // Express Session Middleware
 app.use(session({
-    secret: 'keyboard cat',
+    name:SESS_NAME,
+    secret: SESS_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 90000 }
+    cookie: {
+        maxAge: SESS_LIFETIME,
+        sameSite: true,
+        secure :IN_PROD
+
+    }
 }));
 
 
@@ -81,12 +100,7 @@ app.use(homeRoutes);
 app.use(dashRoutes);
 
 
-twilioClient.verify
-    .services("VA2a8112631ea0d0d5557d8b36a8e4b15a") //Put the Verification service SID here
-    .verifications.create({to: "sonofwavy05@gmail.com", channel: "email"})
-    .then(verification => {
-        console.log(verification.sid);
-    });
+
 
 
 

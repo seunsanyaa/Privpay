@@ -18,17 +18,17 @@ const router = express.Router();
 
 const User = require("../models/User");
 const auth = require('../middleware/auth');
-// router.use(cookieParser('supersecret'))
-// router.use(session({cookie: {maxAge: 300000*2}}))
-router.use(flash());
+
+// router.use(flash());
 router.get('/', homeController.homePage);
+// router.use(session({
+//     secret: 'keyboard cat',
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { maxAge: 90000 }
+// }));
 
 
-// router.use((req, res, next)=>{
-//     res.locals.message = req.session.message;
-//     delete req.session.message;
-//     next();
-// });
 
 
 
@@ -149,7 +149,7 @@ router.post(
                 req.flash('message', 'User Already Exits');
 
 
-                res.redirect('/signup');
+              return   res.redirect('/signup');
             }
 
             user = new User({
@@ -176,21 +176,21 @@ router.post(
                 "randomString", {
                     expiresIn: 10000
                 },
-                async (err, token) => {
+                async (err, user) => {
                     if (err) throw err;
-
+req.body=req.session;
                     twilioClient.verify
                         .services(verificationSID)
                         .verifications.create({ to: email, channel: "email" })
                         .then(verification => {
                             console.log("Verification email sent");
-                            req.session.user = user;
+
                             res.redirect(`/verify?email=${email}`);
                         })
                         .catch(error => {
                             console.log(error);
                             req.flash('message', 'Something went wrong');
-                            res.redirect('/signup');
+                           return  res.redirect('/signup');
 
                         });
 
@@ -205,7 +205,7 @@ router.post(
         catch (err) {
             console.log(err.message);
             req.flash('message','error something went wrong');
-            res.redirect('/signup')
+            return res.redirect('/signup')
             // res.status(500).send("Error in Saving");
         }
 
@@ -232,7 +232,7 @@ router.get('/verify', homeController.mailConfirm);
 
 router.post("/verify", (req, res) => {
     const userCode = req.body.code;
-  const email =  res.session.user.email;
+  const email =  req.user.email;
 
 
     console.log(`Code: ${userCode}`);
@@ -241,7 +241,7 @@ router.post("/verify", (req, res) => {
     //CHECK YOUR VERIFICATION CODE HERE
 
     twilioClient.verify
-        .services('VA2a8112631ea0d0d5557d8b36a8e4b15a')
+        .services(verificationSID)
         .verificationChecks.create({ to: email, code: userCode })
         .then(verification_check => {
             if (verification_check.status === "approved") {
@@ -258,7 +258,7 @@ router.post("/verify", (req, res) => {
         .catch(error => {
 
             console.log(error);
-            req.flash('message','Please enter the correct code from your mail');
+            req.flash('message','sommething went wrong');
             res.redirect(`/verify?email=`+email);
         });
 });
