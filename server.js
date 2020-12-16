@@ -12,7 +12,9 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const axios= require('axios');
 const mailchimpClient = require("@mailchimp/mailchimp_transactional")("Dr5f1iglJGGZUZQUHEDEdQ");
-
+const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
+const authToken = 'c586aef6d9838bf26d9c453eba92b449';
+const twilioClient = require("twilio")(accountSid, authToken);
 
 global.crypto = require('crypto')
 const port = 3000
@@ -78,6 +80,13 @@ const dashRoutes = require('./routes/Dashboard');
 app.use(homeRoutes);
 app.use(dashRoutes);
 
+
+twilioClient.verify
+    .services("VA2a8112631ea0d0d5557d8b36a8e4b15a") //Put the Verification service SID here
+    .verifications.create({to: "sonofwavy05@gmail.com", channel: "email"})
+    .then(verification => {
+        console.log(verification.sid);
+    });
 
 
 
