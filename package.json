@@ -32,7 +32,6 @@
     "object-hash": "^2.0.3",
     "path": "^0.12.7",
     "req-flash": "^0.0.3",
-    "session-storage": "^1.0.1",
     "twilio": "^3.54.0",
     "uglify-js": "^3.12.0",
     "winston": "^3.3.3",

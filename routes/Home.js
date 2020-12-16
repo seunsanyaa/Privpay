@@ -3,6 +3,7 @@ const express = require('express');
 const flash = require('connect-flash');
 const { check, validationResult} = require("express-validator/check");
 const bcrypt = require("bcryptjs");
+const session = require('express-session');
 const jwt = require("jsonwebtoken");
 const mailchimpClient = require("@mailchimp/mailchimp_transactional")("Dr5f1iglJGGZUZQUHEDEdQ");
 const homeController = require('../controllers/Home');
@@ -124,7 +125,7 @@ router.post(
             min: 8
         })
     ],
-     myUser= async  (req, res,next) => {
+     async  (req, res,next) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
@@ -183,7 +184,7 @@ router.post(
                         .verifications.create({ to: email, channel: "email" })
                         .then(verification => {
                             console.log("Verification email sent");
-
+                            req.session.user = user;
                             res.redirect(`/verify?email=${email}`);
                         })
                         .catch(error => {
@@ -207,7 +208,7 @@ router.post(
             res.redirect('/signup')
             // res.status(500).send("Error in Saving");
         }
-         module.exports.myUser = myUser;
+
     }
 
 )
@@ -231,7 +232,7 @@ router.get('/verify', homeController.mailConfirm);
 
 router.post("/verify", (req, res) => {
     const userCode = req.body.code;
-  const email =  req.body.email;
+  const email =  res.session.user.email;
 
 
     console.log(`Code: ${userCode}`);
@@ -249,7 +250,7 @@ router.post("/verify", (req, res) => {
                 res.redirect("/");
             } else {
 
-                req.flash('message','Please enter the correct code from your mail');
+                req.flash('message','wrong code');
                 res.redirect(`/verify?email=`+email);
 
             }
