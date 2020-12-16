@@ -3,7 +3,7 @@ const express = require('express');
 const flash = require('connect-flash');
 const { check, validationResult} = require("express-validator/check");
 const bcrypt = require("bcryptjs");
-const session = require('express-session');
+// const session = require('express-session');
 const jwt = require("jsonwebtoken");
 const mailchimpClient = require("@mailchimp/mailchimp_transactional")("Dr5f1iglJGGZUZQUHEDEdQ");
 const homeController = require('../controllers/Home');
@@ -178,7 +178,7 @@ router.post(
                 },
                 async (err, user) => {
                     if (err) throw err;
-req.body=req.session;
+
                     twilioClient.verify
                         .services(verificationSID)
                         .verifications.create({ to: email, channel: "email" })
