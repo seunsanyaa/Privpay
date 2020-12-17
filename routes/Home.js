@@ -31,10 +31,6 @@ router.get('/', homeController.homePage);
 
 router.get('/verified', homeController.verified);
 
-router.get('*', homeController.error404);
-
-
-
 router.get('/login', homeController.login);
 
 
@@ -291,6 +287,8 @@ router.post("/verify", (req, res) => {
     //       return   res.redirect(`/verify?email=`+email);
     //     });
 });
+
+router.get('*', homeController.error404);
 
 
 
