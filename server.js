@@ -11,10 +11,12 @@ const expressValidator = require('express-validator');
 const session = require('express-session');
 const flash = require('connect-flash');
 const axios= require('axios');
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey('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');
 const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
 const authToken = 'c586aef6d9838bf26d9c453eba92b449';
 const twilioClient = require("twilio")(accountSid, authToken);
-
+const expressSanitizer = require('express-sanitizer');
 global.crypto = require('crypto')
 
 const mongoConnect= require('./util/database');
@@ -24,7 +26,7 @@ mongoConnect()
 
 
 
-const two_hours = 1000*60*60*2;
+
 
 
 const {
@@ -32,7 +34,7 @@ const {
     NODE_ENV= 'development',
     SESS_NAME= 'sid',
     SESS_SECRET='keyboard cat',
-    SESS_LIFETIME= two_hours
+    SESS_LIFETIME= 1000*60*60*2
 }=process.env
 
 const IN_PROD = NODE_ENV === 'production'
@@ -50,7 +52,7 @@ app.use(express.static('public'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(expressSanitizer());
 
 // Express Session Middleware
 app.use(session({
@@ -70,8 +72,8 @@ app.use(session({
 // Express Messages Middleware
 app.use(flash());
 app.use(function(req, res, next){
-    res.locals.success_messages = req.flash('success_messages');
-    res.locals.error_messages = req.flash('error_messages');
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 })
 

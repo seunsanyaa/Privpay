@@ -12,7 +12,7 @@ exports.login=('/login', (req, res) => {
 });
 
 exports.signUp=('/signup', (req, res) => {
-    res.render('pages/signup',{message: req.flash('message')});
+    res.render('pages/signup',);
 });
 
 exports.forget=('/forget', (req, res) => {
@@ -32,13 +32,34 @@ exports.authCode=('/authenticate', (req, res) => {
 
 
 
-exports.mailConfirm=('/verify', (req, res) => {
+exports.mailConfirm=('/verify', async (req, res) => {
+try {
+    const user=await User.findOne({emailToken:req.query.token});
+    if (!user){
+        req.flash('error','Something went wrong');
+        return res.redirect('/login')
+    }
+    user.emailToken=null;
+    user.isVerified=true;
+    await user.save();
+    await req.login(user,async(err)=>{
+        if (err) throw err;
+        req.flash('success',`welcome ${user.email}`);
+        const redirectUrl=req.session.redirectTo || '/';
+        delete req.session.redirectTo;
+        res.redirect(redirectUrl)
+        res.render('pages/mailconfirm',
+        );
+    })
+}
 
-    res.render('pages/mailconfirm',
-        {
-            message: req.flash('message'),
+catch (err) {
+    console.log(err.message);
+    req.flash('error', 'Something went wrong');
+    return res.redirect('/')
+    // res.status(500).send("Error in Saving");
+}
 
-        });
 
 
 
