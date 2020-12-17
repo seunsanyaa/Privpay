@@ -29,12 +29,9 @@ router.get('/', homeController.homePage);
 //     cookie: { maxAge: 90000 }
 // }));
 
+router.get('/verified', homeController.verified);
 
-
-
-
-
-
+router.get('*', homeController.error404);
 
 
 

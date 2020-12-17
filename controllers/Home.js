@@ -29,6 +29,14 @@ exports.authCode=('/authenticate', (req, res) => {
     res.render('pages/authcode');
 });
 
+exports.verified=('/verified', (req, res) => {
+    res.render('pages/verified');
+});
+
+exports.error404=('*', (req, res) => {
+    res.render('pages/404');
+});
+
 
 
 
