@@ -11,16 +11,34 @@ const expressValidator = require('express-validator');
 const session = require('express-session');
 const flash = require('connect-flash');
 const axios= require('axios');
-const mailchimpClient = require("@mailchimp/mailchimp_transactional")("Dr5f1iglJGGZUZQUHEDEdQ");
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey('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');
 const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
 const authToken = 'c586aef6d9838bf26d9c453eba92b449';
 const twilioClient = require("twilio")(accountSid, authToken);
-
+const expressSanitizer = require('express-sanitizer');
 global.crypto = require('crypto')
-const port = 3000
+
 const mongoConnect= require('./util/database');
 
 mongoConnect()
+
+
+
+
+
+
+
+const {
+    port = 3000,
+    NODE_ENV= 'development',
+    SESS_NAME= 'sid',
+    SESS_SECRET='keyboard cat',
+    SESS_LIFETIME= 1000*60*60*2
+}=process.env
+
+const IN_PROD = NODE_ENV === 'production'
+
 
 const app = express();
 
@@ -34,25 +52,28 @@ app.use(express.static('public'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-
-
-
+app.use(expressSanitizer());
 
 // Express Session Middleware
 app.use(session({
-    secret: 'keyboard cat',
+    name:SESS_NAME,
+    secret: SESS_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 90000 }
+    cookie: {
+        maxAge: SESS_LIFETIME,
+        sameSite: true,
+        secure :IN_PROD
+
+    }
 }));
 
 
 // Express Messages Middleware
 app.use(flash());
 app.use(function(req, res, next){
-    res.locals.success_messages = req.flash('success_messages');
-    res.locals.error_messages = req.flash('error_messages');
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 })
 
@@ -81,12 +102,7 @@ app.use(homeRoutes);
 app.use(dashRoutes);
 
 
-twilioClient.verify
-    .services("VA2a8112631ea0d0d5557d8b36a8e4b15a") //Put the Verification service SID here
-    .verifications.create({to: "sonofwavy05@gmail.com", channel: "email"})
-    .then(verification => {
-        console.log(verification.sid);
-    });
+
 
 
 

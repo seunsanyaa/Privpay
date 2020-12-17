@@ -28,10 +28,13 @@
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pages/mailconfirm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/mailconfirm.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/signup.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,10 +146,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="515" y="154" key="#Language_Injections/0.0.1280.680@0.0.1280.680" timestamp="1607783192609" />
-    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606421545034">
+    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608157074509">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1606421545034" />
+    <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1608157074509" />
     <state x="121" y="50" key="MergeDialog" timestamp="1606153845689">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -167,10 +170,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606153890533" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1606031457142">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1608163582205">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1606031457142" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1608163582205" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1608170609092">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1608170609092" />
     <state x="363" y="253" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606416628375">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

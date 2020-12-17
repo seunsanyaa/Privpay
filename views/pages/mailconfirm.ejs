@@ -40,8 +40,8 @@
                           <p align="center" style="font-family: eina">Enter the code sent to your email</p>
                           <!-- Register form-->
                           <div class="register-form my-4">
-                              <% if (message.length>0) { %>
-                                  <div class="alert alert-danger" style="text-align: center"><%= message %></div>
+                              <% if (error && error.length>0) { %>
+                                  <div class="alert alert-danger" style="text-align: center" role="alert"><%= error %></div>
                               <% } %>
                               <form action="/verify" method="post">
 <<<<<<< HEAD
