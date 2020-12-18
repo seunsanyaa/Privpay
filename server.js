@@ -9,6 +9,9 @@ const bodyParser= require('body-parser');
 const expressValidator = require('express-validator');
 // const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const passport = require("passport");
+const localStrategy = require("passport-local").Strategy;
+
 const flash = require('connect-flash');
 const axios= require('axios');
 const sgMail = require('@sendgrid/mail');
@@ -18,6 +21,7 @@ const authToken = 'c586aef6d9838bf26d9c453eba92b449';
 const twilioClient = require("twilio")(accountSid, authToken);
 const expressSanitizer = require('express-sanitizer');
 global.crypto = require('crypto')
+const User = require("./models/User");
 
 const mongoConnect= require('./util/database');
 
@@ -69,11 +73,24 @@ app.use(session({
 }));
 
 
+
+
+
+
+
+
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 // Express Messages Middleware
 app.use(flash());
 app.use(function(req, res, next){
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
+    res.locals.user = req.user
     next();
 })
 

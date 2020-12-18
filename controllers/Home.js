@@ -1,5 +1,11 @@
 
-const User = require("../models/User");
+function loggedIn(req, res, next) {
+    if (req.user) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+}
 
 exports.homePage=('/', (req, res) => {
     res.render('pages/index');
@@ -32,31 +38,33 @@ exports.authCode=('/authenticate', (req, res) => {
 
 
 
-exports.mailConfirm=('/verify', async (req, res) => {
+exports.mailConfirm=('/verify',loggedIn, async (req, res) => {
 try {
-    const user=await User.findOne({emailToken:req.query.token});
+    const user= req.user;
     if (!user){
+        console.log('not found')
         req.flash('error','Something went wrong');
-        return res.redirect('/login')
+
+        return res.redirect('/signup')
     }
     user.emailToken=null;
     user.isVerified=true;
     await user.save();
     await req.login(user,async(err)=>{
         if (err) throw err;
+        console.log('its working')
         req.flash('success',`welcome ${user.email}`);
         const redirectUrl=req.session.redirectTo || '/';
         delete req.session.redirectTo;
         res.redirect(redirectUrl)
-        res.render('pages/mailconfirm',
-        );
+
     })
 }
 
 catch (err) {
     console.log(err.message);
     req.flash('error', 'Something went wrong');
-    return res.redirect('/')
+    return res.redirect('/login')
     // res.status(500).send("Error in Saving");
 }
 

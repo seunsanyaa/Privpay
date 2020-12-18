@@ -12,13 +12,15 @@ const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
 const authToken = 'c586aef6d9838bf26d9c453eba92b449';
 const twilioClient = require("twilio")(accountSid, authToken);
 const verificationSID= 'VA2a8112631ea0d0d5557d8b36a8e4b15a';
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 //for sessions in the dashboard
 // const isAuth = require('../middleware/is-auth');
 
 const router = express.Router();
 
 const User = require("../models/User");
-const auth = require('../middleware/auth');
+// const auth = require('../middleware/auth');
 
 // router.use(flash());
 router.get('/', homeController.homePage);
@@ -175,8 +177,9 @@ router.post(
             jwt.sign(
                 payload,
                 "randomString", {
-                    expiresIn: 10000
+                    expiresIn: 10000*60*60*2
                 },
+            // User.register(user,
                 async (err, user) => {
                     if (err) throw err;
 
@@ -199,8 +202,11 @@ router.post(
 
                     try {
                        await sgMail.send(msg);
+                       // req.session.user=req.body.user;
+
                         req.flash('success', 'Please check your mail to verify your account.')
                         res.redirect('/')
+
                     }
                     catch (err) {
                         console.log(err.message);
@@ -210,21 +216,7 @@ router.post(
                     }
 
 
-// res.redirect('/verify')
-                    // twilioClient.verify
-                    //     .services(verificationSID)
-                    //     .verifications.create({ to: email, channel: "email" })
-                    //     .then(verification => {
-                    //         console.log("Verification email sent");
-                    //
-                    //         res.redirect(`/verify?email=${email}`);
-                    //     })
-                    //     .catch(error => {
-                    //         console.log(error);
-                    //         req.flash('message', 'Something went wrong');
-                    //        return  res.redirect('/signup');
-                    //
-                    //     });
+
 
 
 
@@ -270,31 +262,40 @@ router.post("/verify", (req, res) => {
     console.log(`Code: ${userCode}`);
     console.log(`Email: ${email}`);
 
-    //CHECK YOUR VERIFICATION CODE HERE
 
-    // twilioClient.verify
-    //     .services('VA2a8112631ea0d0d5557d8b36a8e4b15a')
-    //     .verificationChecks.create({ to: email, code: userCode })
-    //     .then(verification_check => {
-    //         if (verification_check.status === "approved") {
-    //             User.isVerified=true;
-    //
-    //             res.redirect("/");
-    //         } else {
-    //
-    //             req.flash('message','wrong code');
-    //            return  res.redirect(`/verify?email=`+email);
-    //
-    //         }
-    //     })
-    //     .catch(error => {
-    //
-    //         console.log(error);
-    //         req.flash('message','sommething went wrong');
-    //       return   res.redirect(`/verify?email=`+email);
-    //     });
 });
 
+
+
+
+passport.use(new LocalStrategy(
+    function(email, password, done) {
+        User.getUserByUsername(email, function(err, user){
+            if(err) throw err;
+            if(!user){
+                return done(null, false, {message: 'User does not exist!'});
+            }
+
+            User.comparePassword(password, user.password, function(err, isMatch){
+                if(err) throw err;
+                if(isMatch){
+                    return done(null, user);
+                } else {
+                    return done(null, false, {message: 'Invalid password'});
+                }
+            });
+        });
+    }));
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+    User.getUserById(id, function(err, user) {
+        done(err, user);
+    });
+});
 
 
 
