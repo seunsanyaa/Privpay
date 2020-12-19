@@ -33,6 +33,10 @@ exports.verified=('/verified', (req, res) => {
     res.render('pages/verified');
 });
 
+exports.confirm=('/confirm', (req, res) => {
+    res.render('pages/confirm');
+});
+
 exports.error404=('*', (req, res) => {
     res.render('pages/404');
 });
