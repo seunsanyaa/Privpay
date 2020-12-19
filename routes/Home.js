@@ -297,12 +297,12 @@ router.post('/forget', [
                         subject:'Privpay - Password Reset',
                         text:`
                          Please copy and paste the link below to reset your password.
-                        http://${req.headers.host}/verified?token=${token}                                
+                        http://${req.headers.host}/password-rest?token=${token}                                
                 `,
                         html:`<h1>Hello,</h1> 
                                 <p>Thanks for registering on privpay.</p>
                         <p> Please click the link below to reset your password.</p>
-                      <a href="http://${req.headers.host}/verified?token=${token}"> Reset your password. </a>                                
+                      <a href="http://${req.headers.host}/password-reset?token=${token}"> Reset your password. </a>                                
                 `
 
 
