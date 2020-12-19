@@ -22,6 +22,10 @@ const userSchema = new  Schema({
     password:{
         type: String,
         required:true
+    },
+    resetLink:{
+        data:String,
+        default:''
     }
 
 },    {timestamp:true});

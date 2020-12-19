@@ -24,12 +24,7 @@ const User = require("../models/User");
 
 // router.use(flash());
 router.get('/', homeController.homePage);
-// router.use(session({
-//     secret: 'keyboard cat',
-//     resave: false,
-//     saveUninitialized: false,
-//     cookie: { maxAge: 90000 }
-// }));
+
 
 router.get('/verified', homeController.verified);
 
@@ -61,17 +56,19 @@ router.post(
             let user = await User.findOne({
                 email
             });
-            if (!user)
-                return res.status(400).json({
-                    message: "User Not Exist"
-                });
-
+            if (!user || user.isVerified===false) {
+                console.log('User does not exists\'');
+                req.flash('error', 'User does not exists');
+                return res.redirect('/login')
+            }
             const isMatch = await bcrypt.compare(password, user.password);
-            if (!isMatch)
-                return res.status(400).json({
-                    message: "Incorrect Password !"
-                });
+            if (!isMatch) {
 
+                console.log('incorrect password');
+                req.flash('error', 'Incorrect password');
+                return res.redirect('/login');
+
+            }
             const payload = {
                 user: {
                     id: user.id
@@ -86,9 +83,7 @@ router.post(
                 },
                 (err, token) => {
                     if (err) throw err;
-                    res.status(200).json({
-                        token
-                    });
+                    res.redirect('/dashboard')
                 }
             );
         } catch (e) {
@@ -169,7 +164,7 @@ router.post(
                 }
             };
 
-            jwt.sign(
+           const token= jwt.sign(
                 payload,
                 "randomString", {
                     expiresIn: 10000*60*60*2
@@ -184,12 +179,12 @@ router.post(
                         subject:'Privpay - verify your mail',
                         text:`Hello, thanks for registering on privpay.
                          Please copy and paste the link below to verify your account.
-                        http://${req.headers.host}/verify?token=${user.emailToken}                                
+                        http://${req.headers.host}/verified?token=${token}                                
                 `,
                         html:`<h1>Hello,</h1> 
                                 <p>Thanks for registering on privpay.</p>
                         <p> Please click the link below to verify your account.</p>
-                      <a href="http://${req.headers.host}/verify?token=${user.emailToken}"> Verify your account </a>                                
+                      <a href="http://${req.headers.host}/verified?token=${token}"> Verify your account </a>                                
                 `
 
 
@@ -199,8 +194,8 @@ router.post(
                        await sgMail.send(msg);
                        // req.session.user=req.body.user;
 
-                        req.flash('success', 'Please check your mail to verify your account.')
-                        res.redirect('/')
+
+                        res.redirect('/confirm')
 
                     }
                     catch (err) {
@@ -246,53 +241,160 @@ router.get('/Authenticate', homeController.authCode);
 
 router.get('/forget', homeController.forget);
 
+router.post('/forget', [
 
-router.get('/verify', homeController.mailConfirm);
+        check("email", "Please enter a valid email").isEmail(),
 
-router.post("/verify", (req, res) => {
-    const userCode = req.body.code;
-  const email = req.body.email;
+    ],
+    async  (req, res,next) => {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errors: errors.array()
+            });
+        }
+
+        const {
+            email
+        } = req.body;
+
+        try {
+            let user = await User.findOne({
+                email
+            })
+            if (!user) {
+
+                req.flash('error', 'User doesnt exits');
 
 
-    console.log(`Code: ${userCode}`);
-    console.log(`Email: ${email}`);
+                return   res.redirect('/forget');
+            }
 
 
-});
+
+
+
+            const payload = {
+                user: {
+                    id: user._id
+                }
+            };
+
+          const token= jwt.sign(
+                payload,
+                "randomPasswordRestString", {
+                    expiresIn: 10000*60*20
+                },
+                // User.register(user,
+                async (err, user) => {
+
+                    if (err) throw err;
+
+                    const msg={
+                        from:'seunsanyaa@gmail.com',
+                        to:email,
+                        subject:'Privpay - Password Reset',
+                        text:`
+                         Please copy and paste the link below to reset your password.
+                        http://${req.headers.host}/verified?token=${token}                                
+                `,
+                        html:`<h1>Hello,</h1> 
+                                <p>Thanks for registering on privpay.</p>
+                        <p> Please click the link below to reset your password.</p>
+                      <a href="http://${req.headers.host}/verified?token=${token}"> Reset your password. </a>                                
+                `
+
+
+                    }
+
+                    try {
+
+                        await sgMail.send(msg);
+                        // req.session.user=req.body.user;
+                        // return user.updateOne({ resetLink:token})
+
+                        req.flash('success', 'Visit the link sent to yor email');
+                        res.redirect('/forget')
+
+                    }
+                    catch (err) {
+                        console.log(err.message);
+                        req.flash('error', 'Something went wrong');
+                        res.redirect('/forget')
+                        // res.status(500).send("Error in Saving");
+                    }
+
+
+
+
+
+
+
+
+
+                });
+        }
+
+        catch (err) {
+            console.log(err.message);
+            req.flash('error', 'User Already Exits');
+            return res.redirect('/signup')
+            // res.status(500).send("Error in Saving");
+        }
+
+    });
+
+
+// verification code
+// router.get('/verify', homeController.mailConfirm);
+//
+//
+//
+// router.post("/verify", (req, res) => {
+//     const userCode = req.body.code;
+//   const email = req.body.email;
+//
+//
+//     console.log(`Code: ${userCode}`);
+//     console.log(`Email: ${email}`);
+//
+//
+// });
 
 router.get('*', homeController.error404);
 
 
 
 
-passport.use(new LocalStrategy(
-    function(email, password, done) {
-        User.getUserByUsername(email, function(err, user){
-            if(err) throw err;
-            if(!user){
-                return done(null, false, {message: 'User does not exist!'});
-            }
-
-            User.comparePassword(password, user.password, function(err, isMatch){
-                if(err) throw err;
-                if(isMatch){
-                    return done(null, user);
-                } else {
-                    return done(null, false, {message: 'Invalid password'});
-                }
-            });
-        });
-    }));
-
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-    User.getUserById(id, function(err, user) {
-        done(err, user);
-    });
-});
+// passport.use(new LocalStrategy(
+//     function(email, password, done) {
+//         User.getUserByUsername(email, function(err, user){
+//             if(err) throw err;
+//             if(!user){
+//                 return done(null, false, {message: 'User does not exist!'});
+//             }
+//
+//             User.comparePassword(password, user.password, function(err, isMatch){
+//                 if(err) throw err;
+//                 if(isMatch){
+//                     return done(null, user);
+//                 } else {
+//                     return done(null, false, {message: 'Invalid password'});
+//                 }
+//             });
+//         });
+//     }));
+//
+// passport.serializeUser(function(user, done) {
+//     done(null, user.id);
+// });
+//
+// passport.deserializeUser(function(id, done) {
+//     User.getUserById(id, function(err, user) {
+//         done(err, user);
+//     });
+// });
 
 
 

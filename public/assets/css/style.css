@@ -78,7 +78,9 @@ body,
 html {
   font-family: "Inter", sans-serif;
   color: #8480ae;
-  overflow-x: hidden; }
+  width: 100%;
+  overflow-x:hidden ;
+  }
 
 h1,
 h2,

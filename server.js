@@ -90,6 +90,7 @@ app.use(flash());
 app.use(function(req, res, next){
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
+    res.locals.signedEmail=req.body.email;
     res.locals.user = req.user
     next();
 })

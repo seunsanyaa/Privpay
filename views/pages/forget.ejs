@@ -40,9 +40,16 @@
                               <p align="center" style="font-family: eina">Already have an account?<a class="ml-2" href="/login" align="center" style="font-family: eina">Log in</a></p>
                               <!-- Register form-->
                               <div class="register-form my-5">
-                                  <form action="#" method="post">
+                                  <% if (error && error.length>0) { %>
+                                      <div class="alert alert-danger" style="text-align: center" role="alert"><%= error %></div>
+                                  <% } %>
+                                      <% if (success && success.length>0) { %>
+                                          <div class="alert alert-success" style="text-align: center" role="alert"><%= success %></div>
+                                      <% } %>
+                                  <form action="/forget" method="post">
+
                                       <div class="form-group mb-3">
-                                          <input class="form-control rounded-0" type="email" placeholder="Email Address" required>
+                                          <input class="form-control rounded-0" type="email" name="email" placeholder="Email Address" required>
                                       </div>
                                       <button class="btn btn-primary white-btn w-100" align="center" style="font-family: eina"type="submit"><i class="lni-lock mr-2"></i>Reset Password</button>
                                   </form>

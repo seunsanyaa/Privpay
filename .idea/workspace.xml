@@ -28,11 +28,15 @@
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/404.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/404.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/confirm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/confirm.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/forget.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/forget.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/verified.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/verified.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +91,16 @@
       <recent name="C:\Users\Seunxyz\Documents\privpay\Privpay" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="crypto-exchange.ejs" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/privpay/views/dashboard/crypto-exchange.ejs" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.crypto-exchange.ejs" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -106,7 +120,8 @@
       <workItem from="1607535342578" duration="46508000" />
       <workItem from="1607868278998" duration="1291000" />
       <workItem from="1607871254774" duration="36544000" />
-      <workItem from="1608277713419" duration="11615000" />
+      <workItem from="1608277713419" duration="26557000" />
+      <workItem from="1608380616191" duration="2908000" />
     </task>
     <servers />
   </component>
@@ -161,10 +176,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="130" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607784654792" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1608174653445">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1608293459138">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608174653445" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608293459138" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606153890533">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

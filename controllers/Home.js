@@ -1,4 +1,4 @@
-
+const jwt = require("jsonwebtoken");
 function loggedIn(req, res, next) {
     if (req.user) {
         next();
@@ -6,6 +6,7 @@ function loggedIn(req, res, next) {
         res.redirect('/login');
     }
 }
+
 
 exports.homePage=('/', (req, res) => {
     res.render('pages/index');
@@ -35,15 +36,17 @@ exports.authCode=('/authenticate', (req, res) => {
     res.render('pages/authcode');
 });
 
-exports.verified=('/verified', (req, res) => {
+exports.verified=('/verified', loggedIn,(req, res) => {
     res.render('pages/verified');
 });
 
-exports.confirm=('/confirm', (req, res) => {
+exports.confirm=('/confirm',loggedIn, (req, res) => {
+
     res.render('pages/confirm');
 });
 
 exports.error404=('*', (req, res) => {
+
     res.render('pages/404');
 });
 

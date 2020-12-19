@@ -46,6 +46,9 @@
                     <p align="center" style="font-family: eina"> Don't have an account?<a class="ml-2" href="/signup" style="font-family: eina">Sign Up</a></p>
                     <!-- Register Form-->
                     <div class="register-form my-5">
+                        <% if (error && error.length>0) { %>
+                            <div class="alert alert-danger" style="text-align: center" role="alert"><%= error %></div>
+                        <% } %>
                       <form action="/login" method="post">
                         <div class="form-group mb-3">
                           <input class="form-control rounded-0" name="email" type="email" placeholder="Email Address" required>
