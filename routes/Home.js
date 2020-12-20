@@ -265,7 +265,7 @@ router.post('/forget', [
             })
             if (!user) {
 
-                req.flash('error', 'User doesnt exits');
+                req.flash('error', 'User does not exist');
 
 
                 return   res.redirect('/forget');
