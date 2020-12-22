@@ -27,8 +27,6 @@
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pages/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
