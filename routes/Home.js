@@ -28,7 +28,7 @@ router.get('/', homeController.homePage);
 
 router.get('/verified', homeController.verified);
 
-router.get('/confirm', homeController.confirm);
+router.post('/confirm', homeController.confirm);
 
 router.get('/login', homeController.login);
 
