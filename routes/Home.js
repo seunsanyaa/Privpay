@@ -14,6 +14,7 @@ const twilioClient = require("twilio")(accountSid, authToken);
 const verificationSID= 'VA2a8112631ea0d0d5557d8b36a8e4b15a';
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+
 //for sessions in the dashboard
 // const isAuth = require('../middleware/is-auth');
 
@@ -35,64 +36,66 @@ router.get('/login', homeController.login);
 
 router.post(
     "/login",
-
-    [
-        check("email", "Please enter a valid email").isEmail(),
-        check("password", "Please enter a valid password").isLength({
-            min: 7
-        })
-    ],
-    async (req, res) => {
-        const errors = validationResult(req);
-
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
-
-        const { email, password } = req.body;
-        try {
-            let user = await User.findOne({
-                email
-            });
-            if (!user || user.isVerified===false) {
-                console.log('User does not exists\'');
-                req.flash('error', 'User does not exists');
-                return res.redirect('/login')
-            }
-            const isMatch = await bcrypt.compare(password, user.password);
-            if (!isMatch) {
-
-                console.log('incorrect password');
-                req.flash('error', 'Incorrect password');
-                return res.redirect('/login');
-
-            }
-            const payload = {
-                user: {
-                    id: user.id
-                }
-            };
-
-            jwt.sign(
-                payload,
-                "randomString",
-                {
-                    expiresIn: 3600
-                },
-                (err, token) => {
-                    if (err) throw err;
-                    res.redirect('/dashboard')
-                }
-            );
-        } catch (e) {
-            console.error(e);
-            res.status(500).json({
-                message: "Server Error"
-            });
-        }
-    }
+    passport.authenticate('local', { successRedirect: '/dashboard',
+        failureRedirect: '/login',
+        failureFlash: true })
+    // [
+    //     check("email", "Please enter a valid email").isEmail(),
+    //     check("password", "Please enter a valid password").isLength({
+    //         min: 7
+    //     })
+    // ],
+    // async (req, res) => {
+    //     const errors = validationResult(req);
+    //
+    //     if (!errors.isEmpty()) {
+    //         return res.status(400).json({
+    //             errors: errors.array()
+    //         });
+    //     }
+    //
+    //     const { email, password } = req.body;
+    //     try {
+    //         let user = await User.findOne({
+    //             email
+    //         });
+    //         if (!user || user.isVerified===false) {
+    //             console.log('User does not exists\'');
+    //             req.flash('error', 'User does not exists');
+    //             return res.redirect('/login')
+    //         }
+    //         const isMatch = await bcrypt.compare(password, user.password);
+    //         if (!isMatch) {
+    //
+    //             console.log('incorrect password');
+    //             req.flash('error', 'Incorrect password');
+    //             return res.redirect('/login');
+    //
+    //         }
+    //         const payload = {
+    //             user: {
+    //                 id: user.id
+    //             }
+    //         };
+    //
+    //         jwt.sign(
+    //             payload,
+    //             "randomString",
+    //             {
+    //                 expiresIn: 3600
+    //             },
+    //             (err, token) => {
+    //                 if (err) throw err;
+    //                 res.redirect('/dashboard')
+    //             }
+    //         );
+    //     } catch (e) {
+    //         console.error(e);
+    //         res.status(500).json({
+    //             message: "Server Error"
+    //         });
+    //     }
+    // }
 );
 
 
@@ -109,6 +112,9 @@ router.get('/signup', homeController.signUp);
 
 router.post(
     "/signup",
+    // passport.authenticate('local', { successRedirect: '/confirm',
+    //     failureRedirect: '/signup',
+    //     failureFlash: true })
 
     [
 
@@ -118,7 +124,7 @@ router.post(
             min: 8
         })
     ],
-     async  (req, res,next) => {
+     async  (req, res) => {
         const errors = validationResult(req);
 
         if (!errors.isEmpty()) {
@@ -132,96 +138,92 @@ router.post(
             name,
             password
         } = req.body;
+if(!email) {
+    console.log('Error')
+}
+else {    try {
+    let user = await User.findOne({
+        email : email
+    })
+    if (user) {
 
-        try {
-            let user = await User.findOne({
-                email
-            })
-            if (user) {
-
-                req.flash('error', 'User Already Exits');
+        req.flash('error', 'User Already Exits');
 
 
-              return   res.redirect('/signup');
+        return res.redirect('/signup');
+    } else {
+        const user = new User({
+            email:email,
+            name:name,
+            password:password,
+
+            isVerified: false
+        });
+
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(password, salt);
+
+        await user.save();
+
+        const payload = {
+            user: {
+                id: user.id,
+
             }
+        };
 
-          user = new User({
-                email,
-                name,
-                password,
-              emailToken:crypto.randomBytes(64).toString('hex'),
-                isVerified:false
-            });
+        jwt.sign(
+            payload,
+            "randomString", {
+                expiresIn: 10000 * 60 * 60 * 2
+            },
+            //     User.register(user, req.body.password,
+            async (err, user) => {
+                if (err) throw err;
 
-            const salt = await bcrypt.genSalt(10);
-            user.password = await bcrypt.hash(password, salt);
-
-            await user.save();
-
-            const payload = {
-                user: {
-                    id: user.id
-                }
-            };
-
-           const token= jwt.sign(
-                payload,
-                "randomString", {
-                    expiresIn: 10000*60*60*2
-                },
-            // User.register(user,
-                async (err, user) => {
-                    if (err) throw err;
-
-                    const msg={
-                        from:'seunsanyaa@gmail.com',
-                        to:email,
-                        subject:'Privpay - verify your mail',
-                        text:`Hello, thanks for registering on privpay.
+                const msg = {
+                    from: 'seunsanyaa@gmail.com',
+                    to: email,
+                    subject: 'Privpay - verify your mail',
+                    text: `Hello, thanks for registering on privpay.
                          Please copy and paste the link below to verify your account.
-                        http://${req.headers.host}/verified?token=${token}                                
+                        http://${req.headers.host}/verified?token=${user}
                 `,
-                        html:`<h1>Hello,</h1> 
+                    html: `<h1>Hello,</h1>
                                 <p>Thanks for registering on privpay.</p>
                         <p> Please click the link below to verify your account.</p>
-                      <a href="http://${req.headers.host}/verified?token=${token}"> Verify your account </a>                                
+                      <a href="http://${req.headers.host}/verified?token=${user}"> Verify your account </a>
                 `
 
 
-                    }
+                }
 
-                    try {
-                       await sgMail.send(msg);
-                       // req.session.user=req.body.user;
+                try {
+                    // await sgMail.send(msg);
+                    console.log('email sent', msg)
+                    // req.session.user=req.body.user;
 
+                    req.session.context= email
+                    res.redirect('/confirm')
 
-                        res.redirect('/confirm')
-
-                    }
-                    catch (err) {
-                        console.log(err.message);
-                        req.flash('error', 'Something went wrong');
-                         res.redirect('/signup')
-                        // res.status(500).send("Error in Saving");
-                    }
-
-
+                } catch (err) {
+                    console.log(err.message);
+                    req.flash('error', 'Something went wrong');
+                    res.redirect('/signup')
+                    // res.status(500).send("Error in Saving");
+                }
 
 
-
-
-
-
-
-                });
-        }
-
-        catch (err) {
-            console.log(err.message);
-            req.flash('error', 'User Already Exits');
-            return res.redirect('/signup')
-            // res.status(500).send("Error in Saving");
-        }
+            });
+    }
+}
+catch (err) {
+    console.log(err.message);
+    req.flash('error', 'User Already Exits');
+    return res.redirect('/signup')
+    // res.status(500).send("Error in Saving");
+}
+}
 
     }
 
@@ -281,7 +283,7 @@ router.post('/forget', [
                 }
             };
 
-          const token= jwt.sign(
+   jwt.sign(
                 payload,
                 "randomPasswordRestString", {
                     expiresIn: 10000*60*20
@@ -297,12 +299,12 @@ router.post('/forget', [
                         subject:'Privpay - Password Reset',
                         text:`
                          Please copy and paste the link below to reset your password.
-                        http://${req.headers.host}/password-rest?token=${token}                                
+                        http://${req.headers.host}/password-rest?token=${user.emailToken}                                
                 `,
                         html:`<h1>Hello,</h1> 
                                 <p>Thanks for registering on privpay.</p>
                         <p> Please click the link below to reset your password.</p>
-                      <a href="http://${req.headers.host}/password-reset?token=${token}"> Reset your password. </a>                                
+                      <a href="http://${req.headers.host}/password-reset?token=${user.emailToken}"> Reset your password. </a>                                
                 `
 
 
