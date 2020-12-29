@@ -15,6 +15,9 @@ const verificationSID= 'VA2a8112631ea0d0d5557d8b36a8e4b15a';
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
+const DashController = require('../controllers/Dashboard');
+
+
 //for sessions in the dashboard
 // const isAuth = require('../middleware/is-auth');
 
@@ -364,6 +367,15 @@ router.post('/forget', [
 //
 // });
 
+router.get('/dashboard', DashController.dashboard);
+
+router.get('/exchange', DashController.dashExchange);
+
+router.get('/wallet', DashController.dashWallet);
+
+router.get('/settings', DashController.dashSettings);
+
+
 router.get('*', homeController.error404);
 
 
@@ -397,6 +409,7 @@ router.get('*', homeController.error404);
 //         done(err, user);
 //     });
 // });
+
 
 
 
