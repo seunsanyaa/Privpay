@@ -25,9 +25,20 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="">
+    <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="teamssss">
+      <change afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/confirm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/confirm.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/verified.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/verified.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,12 +93,16 @@
       <recent name="C:\Users\Seunxyz\Documents\privpay\Privpay" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.Home.js">
     <configuration name="crypto-exchange.ejs" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/privpay/views/dashboard/crypto-exchange.ejs" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/controllers/Home.js" working-dir="$PROJECT_DIR$/controllers">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.Home.js" />
         <item itemvalue="JavaScript Debug.crypto-exchange.ejs" />
       </list>
     </recent_temporary>
@@ -113,7 +128,17 @@
       <workItem from="1607871254774" duration="36544000" />
       <workItem from="1608277713419" duration="26557000" />
       <workItem from="1608380616191" duration="5988000" />
+      <workItem from="1608720692934" duration="7119000" />
+      <workItem from="1609167585717" duration="34950000" />
     </task>
+    <task id="LOCAL-00001" summary="teamssss">
+      <created>1608649158764</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608649158764</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +170,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="teamssss" />
+    <option name="LAST_COMMIT_MESSAGE" value="teamssss" />
   </component>
   <component name="WindowStateProjectService">
     <state x="515" y="154" key="#Language_Injections" timestamp="1607783192609">
@@ -155,6 +182,70 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="414" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1608157074509" />
+    <state width="1259" height="523" key="GridCell.Tab.0.bottom" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.0.center" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.0.left" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.0.right" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.1.bottom" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.1.center" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.1.left" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.1.right" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.2.bottom" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.2.center" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.2.left" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.2.right" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.3.bottom" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.3.bottom/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.3.center" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.3.center/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.3.left" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.3.left/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
+    <state width="1259" height="523" key="GridCell.Tab.3.right" timestamp="1609068283122">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="523" key="GridCell.Tab.3.right/0.0.1280.680@0.0.1280.680" timestamp="1609068283122" />
     <state x="121" y="50" key="MergeDialog" timestamp="1606153845689">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -167,14 +258,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="130" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607784654792" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1608293459138">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1608649166805">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608293459138" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608649166805" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606153890533">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606153890533" />
+    <state x="194" y="70" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1608759823690">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="194" y="70" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1608759823690" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1608163582205">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
