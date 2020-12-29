@@ -202,7 +202,7 @@ else {    try {
                     // await sgMail.send(msg);
                     console.log('email sent', msg)
                     // req.session.user=req.body.user;
-
+                    req.session.user=user
                     req.session.context= email
                     res.redirect('/confirm')
 

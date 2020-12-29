@@ -26,19 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="teamssss">
-      <change afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/confirm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/confirm.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/verified.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/verified.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +119,7 @@
       <workItem from="1608277713419" duration="26557000" />
       <workItem from="1608380616191" duration="5988000" />
       <workItem from="1608720692934" duration="7119000" />
-      <workItem from="1609167585717" duration="34950000" />
+      <workItem from="1609167585717" duration="38276000" />
     </task>
     <task id="LOCAL-00001" summary="teamssss">
       <created>1608649158764</created>
@@ -258,10 +248,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="130" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607784654792" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1608649166805">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1609271366378">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1608649166805" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609271366378" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606153890533">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

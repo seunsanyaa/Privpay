@@ -69,8 +69,9 @@ exports.verified=('/verified', async (req, res) => {
 //         return res.redirect('/login')
 //         // res.status(500).send("Error in Saving");
 //     }
-
-    if(!req.session.context)
+    const user=req.session.user;
+    console.log(user)
+    if(!user)
     {
 
         return res.redirect('/')
