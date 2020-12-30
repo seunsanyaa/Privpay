@@ -37,6 +37,10 @@ exports.authCode=('/authenticate', (req, res) => {
     res.render('pages/authcode');
 });
 
+exports.changepass=('/changepassword', (req, res) => {
+    res.render('pages/changepass');
+});
+
 exports.verified=('/verified', async (req, res) => {
 
 // console.log(req.query)

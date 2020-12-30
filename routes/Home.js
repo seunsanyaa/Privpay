@@ -36,6 +36,8 @@ router.get('/confirm', homeController.confirm);
 
 router.get('/login', homeController.login);
 
+router.get('/changepassword', homeController.changepass);
+
 
 router.post(
     "/login",
