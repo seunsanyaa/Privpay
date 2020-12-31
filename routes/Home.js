@@ -268,7 +268,7 @@ router.post('/forget', [
 
         try {
             let user = await User.findOne({
-                email
+                email : email
             })
             if (!user) {
 
@@ -279,19 +279,19 @@ router.post('/forget', [
             }
 
 
-
+else {
 
 
             const payload = {
                 user: {
-                    id: user._id
+                    id: user.id
                 }
             };
 
    jwt.sign(
                 payload,
                 "randomPasswordRestString", {
-                    expiresIn: 10000*60*20
+                    expiresIn: 10000*60*60*20
                 },
                 // User.register(user,
                 async (err, user) => {
@@ -304,12 +304,12 @@ router.post('/forget', [
                         subject:'Privpay - Password Reset',
                         text:`
                          Please copy and paste the link below to reset your password.
-                        http://${req.headers.host}/password-rest?token=${user.emailToken}                                
+                        http://${req.headers.host}/changepassword?token=${user}                                
                 `,
                         html:`<h1>Hello,</h1> 
                                 <p>Thanks for registering on privpay.</p>
                         <p> Please click the link below to reset your password.</p>
-                      <a href="http://${req.headers.host}/password-reset?token=${user.emailToken}"> Reset your password. </a>                                
+                      <a href="http://${req.headers.host}/changepassword?token=${user}"> Reset your password. </a>                                
                 `
 
 
@@ -317,10 +317,13 @@ router.post('/forget', [
 
                     try {
 
-                        await sgMail.send(msg);
+                        // await sgMail.send(msg);
                         // req.session.user=req.body.user;
                         // return user.updateOne({ resetLink:token})
-
+                        console.log('email sent', msg)
+                        // req.session.user=req.body.user;
+                        req.session.user=user
+                        req.session.context= email
                         req.flash('success', 'Visit the link sent to yor email');
                         res.redirect('/forget')
 
@@ -341,7 +344,7 @@ router.post('/forget', [
 
 
                 });
-        }
+        }}
 
         catch (err) {
             console.log(err.message);

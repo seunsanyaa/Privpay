@@ -38,7 +38,26 @@ exports.authCode=('/authenticate', (req, res) => {
 });
 
 exports.changepass=('/changepassword', (req, res) => {
-    res.render('pages/changepass');
+    const user=req.session.user;
+    console.log(user)
+    if(!user)
+    {
+
+        return res.redirect('/')
+
+    }
+    else{
+        res.render('pages/changepass',{
+
+
+
+
+            user: req.session.context
+        });
+
+    }
+
+    // res.render('pages/changepass');
 });
 
 exports.verified=('/verified', async (req, res) => {
