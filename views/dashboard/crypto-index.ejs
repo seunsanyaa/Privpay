@@ -5,7 +5,7 @@
 
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="../crypto/crypto-index.html" class="logo">
+                <a href="/dashboard" class="logo">
                     <!--                    <span>-->
                     <!--                        <img src="https://res.cloudinary.com/seunsanyaa/image/upload/v1603872788/FAVICON_ef44iv.png" alt="logo-small" class="logo-sm">-->
                     <!--                    </span>-->
@@ -21,14 +21,14 @@
                     <li class="hidden-sm">
                         <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="javascript: void(0);" role="button"
                             aria-haspopup="false" aria-expanded="false">
-                            English <img src="../assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/> <i class="mdi mdi-chevron-down"></i>
+                            <img src="https://res.cloudinary.com/seunsanyaa/image/upload/v1609338824/001-united_kingdom_nulrnb.svg" class="ml-2" height="16" alt=""/> English  <i class="mdi mdi-chevron-down"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="javascript: void(0);"><span> German </span><img src="../assets/images/flags/germany_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                            <a class="dropdown-item" href="javascript: void(0);"><span> Italian </span><img src="../assets/images/flags/italy_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                            <a class="dropdown-item" href="javascript: void(0);"><span> French </span><img src="../assets/images/flags/french_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                            <a class="dropdown-item" href="javascript: void(0);"><span> Spanish </span><img src="../assets/images/flags/spain_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
-                            <a class="dropdown-item" href="javascript: void(0);"><span> Russian </span><img src="../assets/images/flags/russia_flag.jpg" alt="" class="ml-2 float-right" height="14"/></a>
+                            <a class="dropdown-item" href="javascript: void(0);"> <img src="https://res.cloudinary.com/seunsanyaa/image/upload/v1609338805/010-germany_ycub1j.svg" alt="" height="15"/> <span> German </span></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><img src="https://res.cloudinary.com/seunsanyaa/image/upload/v1609338814/032-italy_jrpc6a.svg" alt="" height="15"/><span> Italian </span></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><img src="https://res.cloudinary.com/seunsanyaa/image/upload/v1609338812/023-france_vp5ihm.svg" alt="" height="15"/><span> French </span></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><img src="https://res.cloudinary.com/seunsanyaa/image/upload/v1609338811/026-flags_eewin0.svg" alt=""  height="15"/> <span> Spanish </span></a>
+                            <a class="dropdown-item" href="javascript: void(0);"><img src="https://res.cloudinary.com/seunsanyaa/image/upload/v1609338809/020-russia_oafkp1.svg" alt="" height="15"/><span> Russian </span></a>
                         </div>
                     </li>
 
@@ -80,13 +80,13 @@
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                             aria-haspopup="false" aria-expanded="false">
-                            <img src="../assets/images/users/user-4.jpg" alt="profile-user" class="rounded-circle" />
-                            <span class="ml-1 nav-user-name hidden-sm">Lagbaja <i class="mdi mdi-chevron-down"></i> </span>
+
+                            <span class="ml-1 nav-user-name hidden-sm"><%= user.email %> <i class="mdi mdi-chevron-down"></i> </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#"><i class="dripicons-user text-muted mr-2"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-wallet text-muted mr-2"></i> My Wallet</a>
-                            <a class="dropdown-item" href="#"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
+                            <a class="dropdown-item" href="/wallet"><i class="dripicons-wallet text-muted mr-2"></i> My Wallet</a>
+                            <a class="dropdown-item" href="/settings"><i class="dripicons-gear text-muted mr-2"></i> Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i class="dripicons-exit text-muted mr-2"></i> Logout</a>
                         </div>

@@ -11,17 +11,83 @@
 
 
 exports.dashboard=('/dashboard', (req, res) => {
-    res.render('dashboard/crypto-index');
+
+
+    if(!req.user)
+    {
+
+        return res.redirect('/')
+    }
+    else{
+        res.render('dashboard/crypto-index',{
+
+
+
+
+            user: req.user
+        });
+
+    }
+
+
+
 });
 
 exports.dashExchange=('/exchange', (req, res) => {
-    res.render('dashboard/crypto-exchange');
+    if(!req.user)
+    {
+
+        return res.redirect('/')
+    }
+    else{
+        res.render('dashboard/crypto-exchange',{
+
+
+
+
+            user: req.user
+        });
+
+    }
+    //
+    // res.render('dashboard/crypto-exchange');
 });
 
 exports.dashWallet=('/wallet', (req, res) => {
-    res.render('dashboard/crypto-wallet');
+    if(!req.user)
+    {
+
+        return res.redirect('/')
+    }
+    else{
+        res.render('dashboard/crypto-wallet',{
+
+
+
+
+            user: req.user
+        });
+
+    }
+    // res.render('dashboard/crypto-wallet');
 });
 
 exports.dashSettings=('/settings', (req, res) => {
-    res.render('dashboard/crypto-settings');
+
+    if(!req.user)
+    {
+
+        return res.redirect('/')
+    }
+    else{
+        res.render('dashboard/crypto-settings',{
+
+
+
+
+            user: req.user
+        });
+
+    }
+    // res.render('dashboard/crypto-settings');
 });
