@@ -27,9 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="teamssss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/changepass.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/changepass.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,7 @@
       <workItem from="1608277713419" duration="26557000" />
       <workItem from="1608380616191" duration="5988000" />
       <workItem from="1608720692934" duration="7119000" />
-      <workItem from="1609167585717" duration="58034000" />
+      <workItem from="1609167585717" duration="72099000" />
     </task>
     <task id="LOCAL-00001" summary="teamssss">
       <created>1608649158764</created>

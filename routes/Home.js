@@ -39,6 +39,194 @@ router.get('/login', homeController.login);
 router.get('/changepassword', homeController.changepass);
 
 
+
+
+
+// router.post('changepassword', async(req, res)=> {
+//     async.waterfall([
+//         function(done) {
+//             User.findOne({ email: req.session.context }, function(err, user, next) {
+//                 if (!user) {
+//                     req.flash('error', 'Password reset token is invalid or has expired.');
+//                     return res.redirect('back');
+//                 }
+//
+//
+//                 // user.password = req.body.password;
+//                 const salt = await bcrypt.genSalt(10);
+//                 user.password = await bcrypt.hash(req.body.password, salt);
+//                 console.log('password' + user.password  + 'and the user is' + user)
+//
+//                 user.save(function(err) {
+//                     if (err) {
+//                         console.log('here')
+//                         return res.redirect('back');
+//                     } else {
+//                         console.log('here2')
+//                         req.logIn(user, function(err) {
+//                             done(err, user);
+//                         });
+//
+//                     }
+//                 });
+//             });
+//         },
+//
+//
+//
+//
+//
+//         function(user, done) {
+//             // console.log('got this far 4')
+//             var smtpTrans = nodemailer.createTransport({
+//                 service: 'Gmail',
+//                 auth: {
+//                     user: 'myemail',
+//                     pass: 'mypass'
+//                 }
+//             });
+//             var mailOptions = {
+//                 to: user.email,
+//                 from: 'myemail',
+//                 subject: 'Your password has been changed',
+//                 text: 'Hello,\n\n' +
+//                     ' - This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
+//             };
+//             smtpTrans.sendMail(mailOptions, function(err) {
+//                 // req.flash('success', 'Success! Your password has been changed.');
+//                 done(err);
+//             });
+//         }
+//     ], function(err) {
+//         res.redirect('/');
+//     });
+// });
+
+
+
+
+
+
+router.post(
+    "/changepassword",
+
+    [
+
+
+        check("password", "Please enter a valid password").isLength({
+            min: 8
+        })
+    ],
+    async  (req, res) => {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errors: errors.array()
+            });
+        }
+
+        const {
+
+            password
+        } = req.body;
+       const email=  req.session.context
+        try {
+            let user = await User.findOne({
+                email: req.session.context
+            })
+            if (!user) {
+
+                req.flash('error', '/');
+
+
+                return res.redirect('/');
+            } else {
+                // const user =  User.updateOne({
+                //
+                //     password:password,
+                //
+                //
+                // });
+
+                const salt = await bcrypt.genSalt(10);
+                user.password = await bcrypt.hash(password, salt);
+
+                await user.save();
+
+                const payload = {
+                    user: {
+                        id: user.id,
+
+                    }
+                };
+
+                jwt.sign(
+                    payload,
+                    "randomString", {
+                        expiresIn: 10000 * 60
+                    },
+                    //     User.register(user, req.body.password,
+                    async (err, user) => {
+                        if (err) throw err;
+
+                        const msg = {
+                            from: 'seunsanyaa@gmail.com',
+                            to: email,
+                            subject: 'Privpay - Changed password',
+                            text: `Hello, your password has been successfully changed.
+                         You can now login with the new password.
+                        http://${req.headers.host}/login
+                `,
+                            html: `<h1>Hello,</h1>
+                                <p>Thanks for registering on privpay.</p>
+                        <p> Please click the link below to verify your account.</p>
+                      <a href="http://${req.headers.host}/login}"> Verify your account </a>
+                `
+
+
+                        }
+
+                        try {
+                            // await sgMail.send(msg);
+                            console.log('email sent', msg)
+                            // req.session.user=req.body.user;
+                            req.session.user=user
+                            req.session.context= email
+                            res.redirect('/login')
+
+                        } catch (err) {
+                            console.log(err.message);
+                            req.flash('error', 'Something went wrong');
+                            res.redirect('/signup')
+                            // res.status(500).send("Error in Saving");
+                        }
+
+
+                    });
+            }
+        }
+        catch (err) {
+            console.log(err.message);
+            req.flash('error', 'Something went wrong');
+            return res.redirect('/login')
+            // res.status(500).send("Error in Saving");
+        }
+
+
+    }
+
+)
+
+
+
+
+
+
+
+
+
+
 router.post(
     "/login",
     passport.authenticate('local', { successRedirect: '/dashboard',
@@ -117,9 +305,6 @@ router.get('/signup', homeController.signUp);
 
 router.post(
     "/signup",
-    // passport.authenticate('local', { successRedirect: '/confirm',
-    //     failureRedirect: '/signup',
-    //     failureFlash: true })
 
     [
 
