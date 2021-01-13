@@ -1,29 +1,43 @@
-body, header{
-    max-width: 1440px;
-    margin: auto;
+body,
+header {
+  max-width: 1440px;
+  margin: auto;
+}
+
+.dash-icons {
+  width: 35px;
+  margin: 15px 0px;
 }
 
 @media (min-width: 200px) and (max-width: 320px) {
-    .eop{
-        max-width: 220px;
-        overflow: hidden;
-    }
-    .pad-0{
-        padding: 0px;
-    }
+  .eop {
+    max-width: 220px;
+    overflow: hidden;
+  }
+  .pad-0 {
+    padding: 0px;
+  }
+  .dash-icons {
+    width: 25px;
+    margin: 25px 0px;
+  }
 }
 
 @media (min-width: 321px) and (max-width: 500px) {
-    .eop{
-        max-width: 280px;
-        overflow: hidden;
-    }
+  .eop {
+    max-width: 280px;
+    overflow: hidden;
+  }
+  .dash-icons {
+    width: 25px;
+    margin: 30px 0px;
+  }
 }
 @media (min-width: 1000px) and (max-width: 1440px) {
-    .space-jor{
-        margin: 22px;
-    }
-    .card-h{
-        height: 120px;
-    }
+  .space-jor {
+    margin: 22px;
+  }
+  .card-h {
+    height: 120px;
+  }
 }
