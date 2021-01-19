@@ -31,14 +31,6 @@ exports.forget=('/forget', (req, res) => {
     res.render('pages/forget');
 });
 
-exports.transfer=('/ngnbtc', (req, res) => {
-    res.render('pages/transfer');
-});
-
-exports.transferBtc=('/btcngn', (req, res) => {
-    res.render('pages/transferBtc');
-});
-
 
 exports.bvn=('/bank-verification', (req, res) => {
 
