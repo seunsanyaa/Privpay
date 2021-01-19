@@ -19,7 +19,7 @@ exports.login=('/login', (req, res) => {
     res.render('pages/login');
 });
 
-exports.signUp=('/signup', (req, res) => {
+exports.signUp=('/signup' , (req, res) => {
     res.render('pages/signup',);
 });
 
@@ -158,11 +158,11 @@ try {
     await user.save();
     await req.login(user,async(err)=>{
         if (err) throw err;
-        console.log('its working')
+        console.log('its working');
         req.flash('success',`welcome ${user.email}`);
         const redirectUrl=req.session.redirectTo || '/';
         delete req.session.redirectTo;
-        res.redirect(redirectUrl)
+        res.redirect(redirectUrl);
 
     })
 }

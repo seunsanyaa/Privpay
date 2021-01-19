@@ -14,6 +14,7 @@ const twilioClient = require("twilio")(accountSid, authToken);
 const verificationSID= 'VA2a8112631ea0d0d5557d8b36a8e4b15a';
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const bitcoin = require("bitcoinjs-lib");
 
 const DashController = require('../controllers/Dashboard');
 
@@ -22,6 +23,9 @@ const DashController = require('../controllers/Dashboard');
 // const isAuth = require('../middleware/is-auth');
 
 const router = express.Router();
+
+const keyPair = bitcoin.ECPair.makeRandom();
+// const { address } = bitcoin.payments.p2pkh({ pubkey: keyPair.publicKey })
 
 const User = require("../models/User");
 // const auth = require('../middleware/auth');
@@ -391,6 +395,7 @@ else {    try {
                 try {
                     // await sgMail.send(msg);
                     console.log('email sent', msg)
+                    console.log(keyPair.getPublicKey());
                     // req.session.user=req.body.user;
                     req.session.user=user
                     req.session.context= email

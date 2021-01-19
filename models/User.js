@@ -32,6 +32,10 @@ const userSchema = new  Schema({
 },    {timestamp:true});
 
 
+
+
+
+
 userSchema.plugin(passportLocalMongoose)
 const User=mongoose.model('user',userSchema);
 module.exports=User;
