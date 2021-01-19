@@ -19,6 +19,10 @@ exports.login=('/login', (req, res) => {
     res.render('pages/login');
 });
 
+exports.logout=('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/');
+});
 exports.signUp=('/signup' , (req, res) => {
     res.render('pages/signup',);
 });

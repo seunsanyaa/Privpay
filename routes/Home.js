@@ -42,7 +42,7 @@ router.get('/login', homeController.login);
 
 router.get('/changepassword', homeController.changepass);
 
-
+router.get('/logout', homeController.logout);
 
 
 
