@@ -25,11 +25,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="teamssss">
+    <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="before blockchain api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/pages/changepass.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/changepass.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dashboard/crypto-exchange.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard/crypto-exchange.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dashboard/crypto-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard/crypto-index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dashboard/crypto-wallet.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard/crypto-wallet.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,8 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -120,7 +123,14 @@
       <workItem from="1608277713419" duration="26557000" />
       <workItem from="1608380616191" duration="5988000" />
       <workItem from="1608720692934" duration="7119000" />
-      <workItem from="1609167585717" duration="72099000" />
+      <workItem from="1609167585717" duration="72158000" />
+      <workItem from="1609701280016" duration="2966000" />
+      <workItem from="1609750863554" duration="156000" />
+      <workItem from="1609751040347" duration="7976000" />
+      <workItem from="1609947974214" duration="11720000" />
+      <workItem from="1610573921152" duration="959000" />
+      <workItem from="1610729096339" duration="4126000" />
+      <workItem from="1611076056005" duration="3243000" />
     </task>
     <task id="LOCAL-00001" summary="teamssss">
       <created>1608649158764</created>
@@ -129,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608649158764</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="before blockchain api">
+      <created>1609541438285</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609541438285</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +179,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="teamssss" />
-    <option name="LAST_COMMIT_MESSAGE" value="teamssss" />
+    <MESSAGE value="before blockchain api" />
+    <option name="LAST_COMMIT_MESSAGE" value="before blockchain api" />
   </component>
   <component name="WindowStateProjectService">
     <state x="515" y="154" key="#Language_Injections" timestamp="1607783192609">
@@ -241,22 +259,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="50" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606153845689" />
-    <state x="280" y="102" key="MultipleFileMergeDialog" timestamp="1606153845698">
+    <state x="280" y="102" key="MultipleFileMergeDialog" timestamp="1611076734916">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606153845698" />
-    <state x="130" y="0" key="SettingsEditor" timestamp="1607784654792">
+    <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1611076734916" />
+    <state x="284" y="6" key="SettingsEditor" timestamp="1609751357769">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="130" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1607784654792" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1609271366378">
+    <state x="284" y="6" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1609751357769" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1609541443137">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609271366378" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606153890533">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609541443137" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611076777625">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606153890533" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1611076777625" />
     <state x="194" y="70" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1608759823690">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
