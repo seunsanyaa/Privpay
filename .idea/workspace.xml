@@ -27,11 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="before blockchain api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/dashboard/crypto-exchange.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard/crypto-exchange.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dashboard/crypto-index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard/crypto-index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dashboard/crypto-wallet.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard/crypto-wallet.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +126,7 @@
       <workItem from="1609947974214" duration="11720000" />
       <workItem from="1610573921152" duration="959000" />
       <workItem from="1610729096339" duration="4126000" />
-      <workItem from="1611076056005" duration="3243000" />
+      <workItem from="1611076056005" duration="3573000" />
     </task>
     <task id="LOCAL-00001" summary="teamssss">
       <created>1608649158764</created>
@@ -263,6 +259,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="280" y="102" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1611076734916" />
+    <state x="447" y="0" key="RollbackChangesDialog" timestamp="1611085970688">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="447" y="0" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1611085970688" />
     <state x="284" y="6" key="SettingsEditor" timestamp="1609751357769">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
