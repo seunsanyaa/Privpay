@@ -436,6 +436,10 @@ router.get('/Bank-Verification', homeController.bvn);
 
 router.get('/Authenticate', homeController.authCode);
 
+router.get('/ngnbtc', homeController.transfer);
+
+router.get('/btcngn', homeController.transferBtc);
+
 router.get('/forget', homeController.forget);
 
 router.post('/forget', [
