@@ -22,6 +22,8 @@ const twilioClient = require("twilio")(accountSid, authToken);
 const expressSanitizer = require('express-sanitizer');
 global.crypto = require('crypto')
 const User = require("./models/User");
+const BTC = require("./models/User");
+
 const bcrypt = require("bcryptjs");
 const mongoConnect= require('./util/database');
 

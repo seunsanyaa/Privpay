@@ -570,6 +570,89 @@ router.get('/dashboard', DashController.dashboard);
 
 router.get('/exchange', DashController.dashExchange);
 
+
+
+router.post('/ngnbtc',   [
+
+        check("btc", " ").isNumeric(),
+        check("dollar", " ").isNumeric()
+
+    ],
+    async  (req, res,next) => {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errors: errors.array()
+            });
+        }
+
+        const {
+            btc,
+            dollar
+        } = req.body;
+if(req.body) {
+    try {
+
+
+        req.session.btc = btc
+        req.session.dollar = dollar
+        return res.redirect('/ngnbtc');
+
+    }
+
+
+catch (err)
+    {
+        console.log(err.message);
+
+        return res.redirect('/')
+        // res.status(500).send("Error in Saving");
+    }
+}
+    });
+
+
+
+router.post('/btcngn',   [
+
+        check("btc", " ").isNumeric(),
+        check("dollar", " ").isNumeric()
+
+    ],
+    async  (req, res,next) => {
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errors: errors.array()
+            });
+        }
+
+        const {
+            btc,
+            dollar
+        } = req.body;
+        if(req.body) {
+            try {
+
+
+                req.session.btc = btc
+                req.session.dollar = dollar
+                return res.redirect('/btcngn');
+
+            }
+
+
+            catch (err)
+            {
+                console.log(err.message);
+
+                return res.redirect('/')
+                // res.status(500).send("Error in Saving");
+            }
+        }
+    });
 router.get('/wallet', DashController.dashWallet);
 
 router.get('/settings', DashController.dashSettings);

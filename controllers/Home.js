@@ -1,5 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
+const BTC = require("../models/User");
+
 function loggedIn(req, res, next) {
     if (req.user) {
         next();
@@ -32,11 +34,47 @@ exports.forget=('/forget', (req, res) => {
 });
 
 exports.transfer=('/ngnbtc', (req, res) => {
-    res.render('pages/transfer');
+
+
+    if(!req.user )
+    {
+
+        return res.redirect('/')
+    }
+    else{
+        res.render('pages/transfer',{
+
+
+            // dollar: req.session.context,
+            btc: req.session.btc,
+           dollar: req.session.dollar
+        });
+
+    }
+
+    // res.render('');
 });
 
 exports.transferBtc=('/btcngn', (req, res) => {
-    res.render('pages/transferBtc');
+
+
+    if(!req.user )
+    {
+
+        return res.redirect('/')
+    }
+    else{
+        res.render('pages/transferbtc',{
+
+
+            // dollar: req.session.context,
+            btc: req.session.btc,
+            dollar: req.session.dollar
+        });
+
+    }
+
+    // res.render('');
 });
 
 

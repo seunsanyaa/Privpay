@@ -27,7 +27,15 @@
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="before blockchain api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/dashboard/crypto-exchange.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard/crypto-exchange.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/transfer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/transfer.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/transferbtc.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/transferbtc.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +134,11 @@
       <workItem from="1609947974214" duration="11720000" />
       <workItem from="1610573921152" duration="959000" />
       <workItem from="1610729096339" duration="4126000" />
-      <workItem from="1611076056005" duration="3573000" />
+      <workItem from="1611076056005" duration="4325000" />
+      <workItem from="1611600976455" duration="14100000" />
+      <workItem from="1611870046416" duration="1016000" />
+      <workItem from="1611915625592" duration="5197000" />
+      <workItem from="1612202745903" duration="9637000" />
     </task>
     <task id="LOCAL-00001" summary="teamssss">
       <created>1608649158764</created>
@@ -147,6 +159,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -267,10 +289,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="284" y="6" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1609751357769" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1609541443137">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1611086067622">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609541443137" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1611086067622" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611076777625">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -279,17 +301,29 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="194" y="70" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1608759823690" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1608163582205">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1611609651787">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1608163582205" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1608170609092">
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1611609651787" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1612202851335">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1608170609092" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1612202851335" />
     <state x="363" y="253" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1606416628375">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="363" y="253" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1280.680@0.0.1280.680" timestamp="1606416628375" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/routes/Home.js</url>
+          <line>334</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

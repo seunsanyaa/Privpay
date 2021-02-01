@@ -4,6 +4,7 @@ const JWTStrategy = passportJWT.Strategy;
 const bcrypt = require('bcryptjs');
 const User = require("../models/User");
 
+
 module.exports = function(passport) {
     passport.use(
         new LocalStrategy({usernameField : 'email',passwordField:'password'},(email,password,done)=> {
