@@ -40,7 +40,7 @@
                       </div> 
                       <div style="text-align: center;">
                         <p align="center" style="font-family: eina; color: #1f0757;">Kindly send $ <%= dollar%>  to 5276121482 Private Pay, Rubies Microfinance Bank.</p>
-                        <button class="btn btn-primary white-btn w-100" type="submit" style="font-family: eina; margin-top: 20px;">Next</button>
+                        <button class="btn btn-primary white-btn w-100" onclick="Tawk_API.toggle()" type="submit" style="font-family: eina; margin-top: 20px;">Next</button>
                       </div>
                     </div>
                   </div>
@@ -51,32 +51,17 @@
         </div>
 
       </section>
-<!-- Start of Async Drift Code -->
-<script>
-    "use strict";
-
-    !function() {
-        var t = window.driftt = window.drift = window.driftt || [];
-        if (!t.init) {
-            if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-            t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
-                t.factory = function(e) {
-                    return function() {
-                        var n = Array.prototype.slice.call(arguments);
-                        return n.unshift(e), t.push(n), t;
-                    };
-                }, t.methods.forEach(function(e) {
-                t[e] = t.factory(e);
-            }), t.load = function(t) {
-                var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-                o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-                var i = document.getElementsByTagName("script")[0];
-                i.parentNode.insertBefore(o, i);
-            };
-        }
-    }();
-    drift.SNIPPET_VERSION = '0.3.1';
-    drift.load('6kehie2vts93');
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/60188107a9a34e36b972c16a/1etfrg1ql';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
 </script>
-<!-- End of Async Drift Code -->
+<!--End of Tawk.to Script-->
 <%- include('../layouts/footer2'); %>
