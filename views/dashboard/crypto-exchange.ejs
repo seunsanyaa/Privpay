@@ -403,12 +403,12 @@
 
                     async function convertPrice() {
                         const rates = await fetchPrices();
-                        const percentCut = 4/100;
+                        const percentCut = 3/100;
                         const isBTCField = this.id === 'btc';
                         const otherField = document.querySelector(isBTCField ? '#usd' : '#btc');
                         const { bitcoin: { usd } } = rates;
                         const btcValue = 1/usd;
-                        otherField.value = this.value * (isBTCField ? usd : (btcValue* percentCut));
+                        otherField.value = this.value * (isBTCField ? usd : ((btcValue* percentCut))+btcValue);
                     }
 
                     async function convertsecPrice() {

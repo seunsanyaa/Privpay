@@ -89,7 +89,7 @@ exports.authCode=('/authenticate', (req, res) => {
 
 exports.changepass=('/changepassword', (req, res) => {
     const user=req.session.user;
-    console.log(user)
+
 
     if(!user)
     {

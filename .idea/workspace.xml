@@ -26,7 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="before blockchain api">
-      <change beforePath="$PROJECT_DIR$/views/pages/transfer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/transfer.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dashboard/crypto-exchange.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard/crypto-exchange.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +133,7 @@
       <workItem from="1611870046416" duration="1016000" />
       <workItem from="1611915625592" duration="5197000" />
       <workItem from="1612202745903" duration="9637000" />
-      <workItem from="1612216456532" duration="2856000" />
+      <workItem from="1612216456532" duration="6195000" />
     </task>
     <task id="LOCAL-00001" summary="teamssss">
       <created>1608649158764</created>

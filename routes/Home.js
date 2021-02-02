@@ -183,9 +183,9 @@ router.post(
                         http://${req.headers.host}/login
                 `,
                             html: `<h1>Hello,</h1>
-                                <p>Thanks for registering on privpay.</p>
-                        <p> Please click the link below to verify your account.</p>
-                      <a href="http://${req.headers.host}/login}"> Verify your account </a>
+                                <p>Your password has been successfully changed.</p>
+                        <p> You can now login with the new password.</p>
+                      <a href="http://${req.headers.host}/login}">  </a>
                 `
 
 
@@ -386,16 +386,18 @@ else {    try {
                     html: `<h1>Hello,</h1>
                                 <p>Thanks for registering on privpay.</p>
                         <p> Please click the link below to verify your account.</p>
-                      <a href="http://${req.headers.host}/verified?token=${user}"> Verify your account </a>
+                      
+                                            <p>${req.headers.host}/verified?token=${user} </p>                                
+
                 `
 
 
                 }
 
                 try {
-                    // await sgMail.send(msg);
-                    console.log('email sent', msg)
-                    console.log(keyPair.getPublicKey());
+                    await sgMail.send(msg);
+                    // console.log('email sent', msg)
+                    // console.log(keyPair.getPublicKey());
                     // req.session.user=req.body.user;
                     req.session.user=user
                     req.session.context= email
@@ -502,8 +504,8 @@ else {
                 `,
                         html:`<h1>Hello,</h1> 
                                 <p>Thanks for registering on privpay.</p>
-                        <p> Please click the link below to reset your password.</p>
-                      <a href="http://${req.headers.host}/changepassword?token=${user}"> Reset your password. </a>                                
+                        <p> Please copy and paste the link below to reset your password.</p>
+                      <p>${req.headers.host}/changepassword?token=${user} </p>                                
                 `
 
 
@@ -511,10 +513,10 @@ else {
 
                     try {
 
-                        // await sgMail.send(msg);
+                        await sgMail.send(msg);
                         // req.session.user=req.body.user;
                         // return user.updateOne({ resetLink:token})
-                        console.log('email sent', msg)
+                        // console.log('email sent', msg)
                         // req.session.user=req.body.user;
                         req.session.user=user
                         req.session.context= email
