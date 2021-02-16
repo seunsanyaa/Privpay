@@ -5,7 +5,7 @@ const MongoClient = mongodb.MongoClient;
 function mongoConnect(){
 
 
-mongoose.connect('mongodb+srv://Enemy:xpNvrwRkdkF1tz5n@privpay.ffr52.mongodb.net/privpay_users?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Enemy:xpNvrwRkdkF1tz5n@privpay.ffr52.mongodb.net/privpay_users?retryWrites=true&w=majority')
     .then(client => {
         console.log('Connected!');
 
