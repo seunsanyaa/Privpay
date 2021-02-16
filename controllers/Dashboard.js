@@ -16,7 +16,8 @@ exports.dashboard=('/dashboard', (req, res) => {
     if(!req.user)
     {
 
-        return res.redirect('/')
+        return res.redirect('/');
+
     }
     else{
         res.render('dashboard/crypto-index',{
