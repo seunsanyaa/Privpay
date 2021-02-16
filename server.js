@@ -11,7 +11,8 @@ const expressValidator = require('express-validator');
 const session = require('express-session');
 const passport = require("passport");
 // const LocalStrategy  = require("passport-local").Strategy;
-require("./config/passport")(passport)
+require("./config/passport")(passport);
+require('dotenv').config();
 const flash = require('connect-flash');
 const axios= require('axios');
 const sgMail = require('@sendgrid/mail');
@@ -33,10 +34,10 @@ mongoConnect()
 
 
 
-
+port = process.env.PORT || 3000;
 
 const {
-    port = 3000,
+
     NODE_ENV= 'development',
     SESS_NAME= 'sid',
     SESS_SECRET='keyboard cat',
