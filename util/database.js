@@ -17,19 +17,3 @@ mongoose.connect(process.env.MONGODB_URI )
 
 module.exports=mongoConnect;
 
-// const mongoose = require("mongoose");
-// const MONGOURI = "mongodb+srv://Enemy:nRDtaPio9RnntdUj@privpay.ffr52.mongodb.net/Privpay?retryWrites=true&w=majority";
-//
-// const mongoConnect = async () => {
-//     try {
-//         await mongoose.connect(MONGOURI, {
-//             useNewUrlParser: true
-//         });
-//         console.log("Connected to DB !!");
-//     } catch (e) {
-//         console.log(e);
-//         throw e;
-//     }
-// };
-//
-// module.exports = mongoConnect();

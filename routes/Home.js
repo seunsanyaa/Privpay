@@ -8,10 +8,9 @@ const jwt = require("jsonwebtoken");
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SG_MAIL);
 const homeController = require('../controllers/Home');
-const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
-const authToken = 'c586aef6d9838bf26d9c453eba92b449';
-const twilioClient = require("twilio")(accountSid, authToken);
-const verificationSID= 'VA2a8112631ea0d0d5557d8b36a8e4b15a';
+
+
+
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bitcoin = require("bitcoinjs-lib");

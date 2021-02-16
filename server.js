@@ -16,10 +16,8 @@ require('dotenv').config();
 const flash = require('connect-flash');
 const axios= require('axios');
 const sgMail = require('@sendgrid/mail');
-sgMail.setApiKey('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');
-const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
-const authToken = 'c586aef6d9838bf26d9c453eba92b449';
-const twilioClient = require("twilio")(accountSid, authToken);
+sgMail.setApiKey(process.env.SG_MAIL);
+
 const expressSanitizer = require('express-sanitizer');
 global.crypto = require('crypto')
 const User = require("./models/User");
