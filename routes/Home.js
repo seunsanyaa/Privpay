@@ -399,7 +399,7 @@ else {    try {
                     // console.log(keyPair.getPublicKey());
                     // req.session.user=req.body.user;
 
-                    req.session.user= 'seunsanyaa@gmail.com'
+                    req.session.user= 'seun'
                     req.session.context= email
                     res.redirect('/confirm')
 
