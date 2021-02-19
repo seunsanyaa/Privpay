@@ -13,7 +13,7 @@
 exports.dashboard=('/dashboard', (req, res) => {
 
 
-    if(!user)
+    if(!req.user)
     {
 
         return res.redirect('/');
@@ -25,7 +25,7 @@ exports.dashboard=('/dashboard', (req, res) => {
 
 
 
-            user: req.session.user
+            user: req.user
         });
 
     }
