@@ -169,7 +169,8 @@ exports.verified=('/verified', async (req, res) => {
 
 
 exports.confirm=('/confirm', async (req, res) => {
-if(!req.session.user)
+    console.log(req.session.user)
+if(!req.session.context)
 {
 
     return res.redirect('/login')
@@ -180,7 +181,7 @@ else{
 
 
 
-        user: req.session.user
+        user: req.session.context
 
     });
 

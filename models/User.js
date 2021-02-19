@@ -24,10 +24,6 @@ const userSchema = new  Schema({
         type: String,
         required:true
     },
-    btc:{
-        type: String,
-        required:true
-    },
     resetLink:{
         data:String,
         default:''
