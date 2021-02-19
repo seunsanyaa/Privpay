@@ -4,8 +4,7 @@ const MongoClient = mongodb.MongoClient;
 
 function mongoConnect(){
 
-
-mongoose.connect(process.env.MONGODB_URI )
+    mongoose.connect(process.env.MONGODB_URI )
     .then(client => {
         console.log('Connected!');
 
