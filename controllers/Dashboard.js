@@ -10,10 +10,10 @@
 // }});
 
 
-exports.dashboard=('/dashboard', (req, res) => {
+module.exports.dashboard=('/dashboard', (req, res) => {
 
 
-    if(!req.session.user)
+    if(!req.user)
     {
 
         return res.redirect('/');
