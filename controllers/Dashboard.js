@@ -25,7 +25,7 @@ exports.dashboard=('/dashboard', (req, res) => {
 
 
 
-            user: req.user
+            user: req.session.user
         });
 
     }
