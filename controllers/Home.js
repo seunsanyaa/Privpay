@@ -169,7 +169,7 @@ exports.verified=('/verified', async (req, res) => {
 
 
 exports.confirm=('/confirm', async (req, res) => {
-    console.log(req.session.user)
+    console.log(req.session)
 if(!req.session.context)
 {
 
