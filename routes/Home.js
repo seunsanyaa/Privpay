@@ -398,8 +398,8 @@ else {    try {
                     // console.log('email sent', msg)
                     // console.log(keyPair.getPublicKey());
                     // req.session.user=req.body.user;
-                    const seun='seunsanyaa@gmail.com'
-                    req.session.user=seun
+
+                    req.session.user= 'seunsanyaa@gmail.com'
                     req.session.context= email
                     res.redirect('/confirm')
 
