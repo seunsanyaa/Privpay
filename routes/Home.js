@@ -401,6 +401,7 @@ else {    try {
                     // req.session.user=req.body.user;
 
                     req.session.user=user
+                    console.log(req.session.user)
                     req.session.context= email
                     res.redirect('/confirm')
 
