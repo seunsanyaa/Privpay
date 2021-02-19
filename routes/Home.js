@@ -398,7 +398,7 @@ else {    try {
                     // console.log('email sent', msg)
                     // console.log(keyPair.getPublicKey());
                     // req.session.user=req.body.user;
-                    req.session.user=user
+                    req.session.user=req.body.email
                     req.session.context= email
                     res.redirect('/confirm')
 

@@ -10,7 +10,7 @@
 // }});
 
 
-module.exports.dashboard=('/dashboard', (req, res) => {
+exports.dashboard=('/dashboard', (req, res) => {
 
 
     if(!req.user)
