@@ -19,14 +19,23 @@ exports.homePage=('/', (req, res) => {
 
 exports.login=('/login', (req, res) => {
     res.render('pages/login');
-});
+})
 
 exports.logout=('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
 });
+
 exports.signUp=('/signup' , (req, res) => {
     res.render('pages/signup',);
+});
+
+exports.privacy=('/privacypolicy' , (req, res) => {
+    res.render('pages/privacy',);
+});
+
+exports.risk=('/risk' , (req, res) => {
+    res.render('pages/risk',);
 });
 
 exports.forget=('/forget', (req, res) => {

@@ -42,6 +42,10 @@ router.get('/login', homeController.login);
 
 router.get('/changepassword', homeController.changepass);
 
+router.get('/privacypolicy', homeController.privacy);
+
+router.get('/risk', homeController.risk);
+
 router.get('/logout', homeController.logout);
 
 
