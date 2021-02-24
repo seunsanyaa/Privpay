@@ -2180,7 +2180,7 @@ textarea:invalid {
 .team-member-page .single-team {
   border-radius: 20px; }
   .team-member-page .single-team::after {
-    display: none; }
+    }
   .team-member-page .single-team img {
     border-radius: 20px; }
 
