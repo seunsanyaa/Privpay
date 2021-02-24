@@ -26,8 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27c5be9c-f2d1-4076-a1db-22d6bda01c4c" name="Default Changelist" comment="before blockchain api">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/footer.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +135,7 @@
       <workItem from="1613444602144" duration="5201000" />
       <workItem from="1613737244812" duration="17777000" />
       <workItem from="1614087438217" duration="697000" />
-      <workItem from="1614159765750" duration="1022000" />
+      <workItem from="1614159765750" duration="1425000" />
     </task>
     <task id="LOCAL-00001" summary="teamssss">
       <created>1608649158764</created>
