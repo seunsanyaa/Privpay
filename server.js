@@ -36,15 +36,6 @@ mongoConnect()
 
 port = process.env.PORT || 3000;
 
-const {
-
-    NODE_ENV= 'development',
-    SESS_NAME= 'sid',
-    SESS_SECRET='keyboard cat',
-    SESS_LIFETIME= 1000*60*60*2
-}=process.env
-
-const IN_PROD = NODE_ENV === 'production'
 
 
 const app = express();
@@ -62,14 +53,14 @@ app.use(expressSanitizer());
 
 // Express Session Middleware
 app.use(session({
-    name:SESS_NAME,
-    secret: SESS_SECRET,
+    name:'sid',
+    secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: SESS_LIFETIME,
+        maxAge: 1000*60*60*2 ,
         sameSite: true,
-        secure :IN_PROD
+        secure : true
 
     }
 

@@ -410,7 +410,7 @@ else {    try {
                     req.session.context= email
 
                     res.redirect('/confirm')
-                    return user
+                 
 
                 } catch (err) {
                     console.log(err.message);
