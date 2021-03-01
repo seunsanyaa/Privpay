@@ -405,7 +405,8 @@ else {    try {
                     // req.session.user=req.body.user;
 
                     req.session.user=user
-                    console.log(req.session.user)
+                    console.log(user)
+                    console.log(process.env.SG_MAIL)
                     req.session.context= email
                     res.redirect('/confirm')
 
