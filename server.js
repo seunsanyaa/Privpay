@@ -2,11 +2,12 @@
 const express = require('express');
 
 
+
 const bodyParser= require('body-parser');
 const bitcoin = require("bitcoinjs-lib");
 
 const expressValidator = require('express-validator');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require("passport");
 // const LocalStrategy  = require("passport-local").Strategy;
@@ -15,10 +16,10 @@ require('dotenv').config();
 const flash = require('connect-flash');
 const axios= require('axios');
 const sgMail = require('@sendgrid/mail');
-process.env.SG_MAIL='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'
-
-sgMail.setApiKey(process.env.SG_MAIL);
-
+sgMail.setApiKey('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');
+const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
+const authToken = 'c586aef6d9838bf26d9c453eba92b449';
+const twilioClient = require("twilio")(accountSid, authToken);
 const expressSanitizer = require('express-sanitizer');
 global.crypto = require('crypto')
 const User = require("./models/User");
@@ -35,6 +36,15 @@ mongoConnect()
 
 port = process.env.PORT || 3000;
 
+const {
+
+    NODE_ENV= 'development',
+    SESS_NAME= 'sid',
+    SESS_SECRET='keyboard cat',
+    SESS_LIFETIME= 1000*60*60*2
+}=process.env
+
+const IN_PROD = NODE_ENV === 'production'
 
 
 const app = express();
@@ -49,17 +59,17 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(expressSanitizer());
-app.use(cookieParser())
+
 // Express Session Middleware
 app.use(session({
-    name:'sid',
-    secret: 'keyboard cat',
-    resave: true,
-    saveUninitialized: true,
+    name:SESS_NAME,
+    secret: SESS_SECRET,
+    resave: false,
+    saveUninitialized: false,
     cookie: {
-        maxAge: 1000*60*60*2 ,
+        maxAge: SESS_LIFETIME,
         sameSite: true,
-        secure : true
+        secure :IN_PROD
 
     }
 
@@ -74,8 +84,6 @@ app.use(flash());
 app.use(function(req, res, next){
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
-    // res.locals.messages = require('express-messages')(req, res);
-
 
     next();
 })

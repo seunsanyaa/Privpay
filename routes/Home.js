@@ -138,9 +138,7 @@ router.post(
 
             password
         } = req.body;
-
        const email=  req.session.context
-
         try {
             let user = await User.findOne({
                 email: req.session.context
@@ -347,7 +345,7 @@ else {    try {
     })
     if (user) {
 
- req.flash('error', 'User Already Exits');
+        req.flash('error', 'User Already Exits');
 
 
         return res.redirect('/signup');

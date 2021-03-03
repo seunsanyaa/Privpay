@@ -29,8 +29,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Home.js" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/database.js" afterDir="false" />
+=======
+>>>>>>> parent of ca359de (added flash router)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,8 +147,12 @@
       <workItem from="1614449303903" duration="1833000" />
       <workItem from="1614538829526" duration="1969000" />
       <workItem from="1614597043499" duration="2105000" />
+<<<<<<< HEAD
       <workItem from="1614608296693" duration="2950000" />
       <workItem from="1614804374893" duration="4383000" />
+=======
+      <workItem from="1614608296693" duration="614000" />
+>>>>>>> parent of ca359de (added flash router)
     </task>
     <task id="LOCAL-00001" summary="teamssss">
       <created>1608649158764</created>
