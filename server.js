@@ -6,7 +6,7 @@ const bodyParser= require('body-parser');
 const bitcoin = require("bitcoinjs-lib");
 
 const expressValidator = require('express-validator');
-// const cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require("passport");
 // const LocalStrategy  = require("passport-local").Strategy;
@@ -15,7 +15,7 @@ require('dotenv').config();
 const flash = require('connect-flash');
 const axios= require('axios');
 const sgMail = require('@sendgrid/mail');
-// process.env.SG_MAIL='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'
+process.env.SG_MAIL='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'
 
 sgMail.setApiKey(process.env.SG_MAIL);
 
@@ -49,13 +49,13 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(expressSanitizer());
-
+app.use(cookieParser())
 // Express Session Middleware
 app.use(session({
     name:'sid',
     secret: 'keyboard cat',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     cookie: {
         maxAge: 1000*60*60*2 ,
         sameSite: true,
@@ -74,6 +74,7 @@ app.use(flash());
 app.use(function(req, res, next){
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
+    // res.locals.messages = require('express-messages')(req, res);
 
 
     next();

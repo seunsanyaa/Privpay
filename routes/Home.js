@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const session = require('express-session');
 const jwt = require("jsonwebtoken");
 const sgMail = require('@sendgrid/mail');
-// process.env.SG_MAIL='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'
+process.env.SG_MAIL='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'
 sgMail.setApiKey(process.env.SG_MAIL);
 const homeController = require('../controllers/Home');
 
@@ -29,14 +29,7 @@ const keyPair = bitcoin.ECPair.makeRandom();
 
 const User = require("../models/User");
 // const auth = require('../middleware/auth');
-router.use(flash());
-router.use(function(req, res, next){
-    res.locals.error = req.flash("error");
-    res.locals.success = req.flash("success");
 
-
-    next();
-})
 // router.use(flash());
 router.get('/', homeController.homePage);
 
