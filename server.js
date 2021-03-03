@@ -2,7 +2,6 @@
 const express = require('express');
 
 
-
 const bodyParser= require('body-parser');
 const bitcoin = require("bitcoinjs-lib");
 
@@ -75,6 +74,7 @@ app.use(flash());
 app.use(function(req, res, next){
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
+
 
     next();
 })

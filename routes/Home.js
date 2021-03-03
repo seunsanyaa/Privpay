@@ -29,7 +29,14 @@ const keyPair = bitcoin.ECPair.makeRandom();
 
 const User = require("../models/User");
 // const auth = require('../middleware/auth');
+router.use(flash());
+router.use(function(req, res, next){
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
 
+
+    next();
+})
 // router.use(flash());
 router.get('/', homeController.homePage);
 
@@ -138,7 +145,9 @@ router.post(
 
             password
         } = req.body;
+
        const email=  req.session.context
+
         try {
             let user = await User.findOne({
                 email: req.session.context
@@ -345,7 +354,7 @@ else {    try {
     })
     if (user) {
 
-        req.flash('error', 'User Already Exits');
+ req.flash('error', 'User Already Exits');
 
 
         return res.redirect('/signup');
