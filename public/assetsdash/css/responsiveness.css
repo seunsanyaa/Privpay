@@ -9,6 +9,19 @@ header {
   margin: 15px 0px;
 }
 
+.first-logo {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .topbar .topbar-left {
+    background: transparent !important;
+  }
+  .first-logo {
+    display: block;
+  }
+}
+
 @media (min-width: 200px) and (max-width: 320px) {
   .eop {
     max-width: 220px;
