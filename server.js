@@ -71,7 +71,7 @@ app.use(session({
     cookie: {
         maxAge: SESS_LIFETIME,
         sameSite: true,
-        secure :IN_PROD
+        secure :false
 
     }
 
