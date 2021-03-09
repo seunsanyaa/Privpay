@@ -326,7 +326,7 @@
                                                 </div>
                                                 <input type="number" step="any" name="dollar" id="usd" class="form-control" placeholder="300" aria-label="123" aria-describedby="basic-addon1" required>
                                                 <div class="input-group-append" id="select-editable">
-                                                    <select class="input-group-text bg-light" id="basic-addon6">
+                                                    <select class="input-group-text bg-light" id="basic-addon6" onchange="convertNgnPrice()">
                                                         <option value="usd" selected>USD</option>
                                                         <option value="naira" id="ngn">Naira</option>
                                                     </select>
@@ -476,7 +476,7 @@
 
 
                     document.addEventListener('DOMContentLoaded', function() {
-                        document.querySelector('#select-editable select #ngn').forEach(input => {
+                        document.querySelectorAll('#select-editable select #ngn').forEach(input => {
                             input.addEventListener('input', convertNgnPrice)
                         });
                     });
