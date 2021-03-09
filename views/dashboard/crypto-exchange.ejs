@@ -327,12 +327,8 @@
                                                 <input type="number" step="any" name="dollar" id="usd" class="form-control" placeholder="300" aria-label="123" aria-describedby="basic-addon1" required>
                                                 <div class="input-group-append">
                                                     <select class="input-group-text bg-light" id="basic-addon6">
-                                                        <option value="rands" selected>Rands</option>
-                                                        <option value="cedis">Cedis</option>
-                                                        <option value="aed">AED</option>
-                                                        <option value="naira">Naira</option>
-                                                        <option value="pounds">Pounds</option>
-                                                        <option value="usd">USD</option>
+                                                        <option value="usd" selected>USD</option>
+                                                        <option value="naira" id="ngn">Naira</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -367,12 +363,13 @@
                                                 <input type="number" id="usd2" placeholder="363" step="any" class="form-control" name="dollar" placeholder="123" aria-label="123" aria-describedby="basic-addon1">
                                                 <div class="input-group-append">
                                                     <select class="input-group-text bg-light" id="basic-addon6">
-                                                        <option value="rands" selected>Rands</option>
-                                                        <option value="cedis">Cedis</option>
-                                                        <option value="aed">AED</option>
-                                                        <option value="naira">Naira</option>
-                                                        <option value="pounds">Pounds</option>
-                                                        <option value="usd">USD</option>
+                                                        <option value="usd"  selected>USD</option>
+                                                        <option value="rands"  class="rands" id="rands2">Rands</option>
+                                                        <option value="cedis" class="cedis" id="cedis2">Cedis</option>
+                                                        <option value="aed" class="aed" id="aed2">AED</option>
+                                                        <option value="naira" class="Naira" id="ngn2">Naira</option>
+                                                        <option value="pounds" class="Pounds" id="pounds2">Pounds</option>
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -447,5 +444,50 @@
                             input.addEventListener('input', convertsecPrice)
                         });
                     });
+
+
+
+
+
+                    async function fetchNgnPrices() {
+                        const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=ngn`);
+                        return response.json();
+                    }
+
+                    async function convertNgnPrice() {
+                        const rates = await fetchNgnPrices();
+                        const percentCut = 4/100;
+                        const isBTCField = this.id === 'btc';
+                        const otherField = document.querySelector(isBTCField ? '#ngn' : '#btc');
+                        const { bitcoin: { ngn } } = rates;
+                        const btcValue = 1/ngn;
+                        otherField.value = this.value * (isBTCField ? ngn : ((btcValue* percentCut))+btcValue);
+                    }
+
+                    async function convertNgnsecPrice() {
+                        const rates = await fetchNgnPrices();
+                        const percentCut = 4/100;
+                        const isBTCField = this.id === 'btc2';
+                        const otherField = document.querySelector(isBTCField ? '#ngn2' : '#btc2');
+                        const { bitcoin: { ngn } } = rates;
+                        const btcValue = 1/ngn;
+                        otherField.value = this.value * (isBTCField ? ngn : (btcValue* percentCut));
+                    }
+
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.querySelector('#ngn input').forEach(input => {
+                            input.addEventListener('input', convertNgnPrice)
+                        });
+                    });
+
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.querySelector('#ngn2 input').forEach(input => {
+                            input.addEventListener('input', convertNgnsecPrice)
+                        });
+                    });
+
+
+
                 </script>
 <%- include('../layouts/footdash'); %>
