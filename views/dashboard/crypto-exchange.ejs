@@ -324,7 +324,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text bg-light" id="basic-addon5">Total</span>
                                                 </div>
-                                                <input type="number" step="any" name="dollar"  class="form-control" placeholder="300" aria-label="123" aria-describedby="basic-addon1" required>
+                                                <input type="number" step="any" name="dollar" id="usd" class="form-control" placeholder="300" aria-label="123" aria-describedby="basic-addon1" required>
                                                 <div class="input-group-append" id="select-editable">
                                                     <select class="input-group-text bg-light" id="basic-addon6" onchange="convertNgnPrice()">
                                                         <option value="usd" id="usd" selected>USD</option>
@@ -458,7 +458,7 @@
                         const rates = await fetchNgnPrices();
                         const percentCut = 4/100;
                         const isBTCField = this.id === 'btc';
-                        const otherField = document.querySelector(isBTCField ? '#ngn' : '#btc');
+                        const otherField = document.getElementById(isBTCField ? '#ngn' : '#btc');
                         const { bitcoin: { ngn } } = rates;
                         const btcValue = 1/ngn;
                         otherField.value = this.value * (isBTCField ? ngn : ((btcValue* percentCut))+btcValue);
@@ -476,7 +476,7 @@
 
 
                     document.addEventListener('DOMContentLoaded', function() {
-                        document.querySelectorAll('#select-editable select #ngn').forEach(input => {
+                        document.querySelectorAll('#buyerform input').forEach(input => {
                             input.addEventListener('input', convertNgnPrice)
                         });
                     });
