@@ -379,7 +379,7 @@ else {    try {
                 if (err) throw err;
 
                 const msg = {
-                    from: 'Support@privpay.exchange',
+                    from: 'seunsanyaa@gmail.com',
                     to: email,
                     subject: 'Privpay - verify your mail',
                     text: `Hello, thanks for registering on privpay.

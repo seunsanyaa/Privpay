@@ -18,9 +18,7 @@ const axios= require('axios');
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SG_MAIL);
 
-const accountSid = 'AC2d957174edc41c3319145d8a935aca04';
-const authToken = 'c586aef6d9838bf26d9c453eba92b449';
-const twilioClient = require("twilio")(accountSid, authToken);
+
 const expressSanitizer = require('express-sanitizer');
 global.crypto = require('crypto')
 const User = require("./models/User");
